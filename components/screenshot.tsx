@@ -65,9 +65,13 @@ export function PhoneShot({
 }: ShotProps) {
   return (
     <div
-      className={`relative aspect-[9/19.5] w-full max-w-[17rem] rounded-[2.5rem] border border-stroke bg-surface p-2 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)] ${className}`}
+      className={`relative aspect-[9/20] w-full max-w-[17rem] rounded-[2.5rem] border border-stroke bg-surface p-2 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)] ${className}`}
     >
-      <div className="absolute left-1/2 top-3.5 z-10 h-5 w-20 -translate-x-1/2 rounded-full bg-ink" />
+      {/* Real captures ship with their own status bar, so the fake notch only
+          belongs on the placeholder. */}
+      {src ? null : (
+        <div className="absolute left-1/2 top-3.5 z-10 h-5 w-20 -translate-x-1/2 rounded-full bg-ink" />
+      )}
       <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-ink-soft">
         {src ? (
           <Image

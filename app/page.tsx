@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PhoneShot, WideShot } from "@/components/screenshot";
+import { PhoneShot } from "@/components/screenshot";
 import { site } from "@/components/site";
 import {
   AndroidIcon,
@@ -25,28 +25,45 @@ const steps = [
     icon: SparkIcon,
     title: "Say what you want to do",
     body: "Coffee at 6. A badminton court. Someone to see the late show with. One line of intent — no caption, no audience.",
-    shot: { label: "Create plan", caption: "Activity, time, place, group size." },
+    shot: {
+      src: "/screenshots/create-plan.png",
+      label: "Create plan",
+      caption: "Activity, time, place, group size.",
+    },
   },
   {
     n: "02",
     icon: CompassIcon,
     title: "Find the people who want it too",
     body: "Discover and the nearby map surface people and plans around you right now, filtered by interest, distance and time.",
-    shot: { label: "Nearby map", caption: "Live plans within walking distance." },
+    shot: {
+      src: "/screenshots/nearby-map.png",
+      label: "Nearby map",
+      caption: "Live plans within walking distance.",
+    },
   },
   {
     n: "03",
     icon: ChatIcon,
     title: "Lock it in and coordinate",
     body: "Join a plan and you land in a room with everyone going. It exists to settle the details, then it closes itself.",
-    shot: { label: "Plan chat", caption: "A room that ends when the plan does." },
+    shot: {
+      src: "/screenshots/plan-chat.png",
+      label: "Plan chat",
+      caption: "A room that ends when the plan does.",
+    },
   },
   {
     n: "04",
     icon: CameraIcon,
     title: "Meet, then keep the moment",
     body: "Afterwards, save a moment with the people who came. That is the feed — proof you went, not proof you posted.",
-    shot: { label: "Moments", caption: "Your record of things you actually did." },
+    shot: {
+      // Drop /screenshots/moments.png in and set src here.
+      src: "/screenshots/moments.png",
+      label: "Moments",
+      caption: "Your record of things you actually did.",
+    },
   },
 ];
 
@@ -198,20 +215,22 @@ function Hero() {
           </p>
         </div>
 
-        {/* Hero screenshots — pass a `src` to PhoneShot once the captures exist. */}
         <div className="relative mt-16 flex items-end justify-center gap-4 sm:mt-20 sm:gap-8">
           <PhoneShot
+            src="/screenshots/discover.png"
             label="Discover"
             caption="People and plans near you."
             className="hidden w-[13rem] translate-y-8 -rotate-6 opacity-90 md:block"
           />
           <PhoneShot
+            src="/screenshots/home.png"
             label="Home"
             caption="Everything you said yes to."
             className="z-10 animate-float"
             priority
           />
           <PhoneShot
+            src="/screenshots/plan-chat.png"
             label="Plan chat"
             caption="Sort the details, then meet."
             className="hidden w-[13rem] translate-y-8 rotate-6 opacity-90 md:block"
@@ -297,9 +316,12 @@ function HowItWorks() {
                     flip ? "flex justify-center md:order-1" : "flex justify-center"
                   }
                 >
-                  <div className="relative">
+                  {/* Needs an explicit width: it is the flex item, and the
+                      frame inside it sizes with w-full. */}
+                  <div className="relative w-full max-w-[17rem]">
                     <div className="pointer-events-none absolute -inset-10 rounded-full bg-accent/10 blur-3xl" />
                     <PhoneShot
+                      src={step.shot.src}
                       label={step.shot.label}
                       caption={step.shot.caption}
                       className="relative"
@@ -389,13 +411,16 @@ function Notifications() {
           </ul>
         </div>
 
-        <div className="relative">
-          <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-accent/10 blur-3xl" />
-          <WideShot
-            label="Notifications and inbox"
-            caption="Plans, People and Plan chat channels."
-            className="relative"
-          />
+        <div className="flex justify-center">
+          <div className="relative w-full max-w-[17rem]">
+            <div className="pointer-events-none absolute -inset-10 rounded-full bg-accent/10 blur-3xl" />
+            <PhoneShot
+              src="/screenshots/notifications.png"
+              label="Notifications and inbox"
+              caption="Plans, People and Plan chat channels."
+              className="relative"
+            />
+          </div>
         </div>
       </div>
     </section>

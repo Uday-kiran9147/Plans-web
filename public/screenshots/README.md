@@ -1,22 +1,25 @@
 # App screenshots
 
-Drop the real captures here, then point the components at them.
+Captures are 1080 × 2400 (9:20), which is exactly the aspect ratio of the phone
+frame in `components/screenshot.tsx` — so nothing is cropped. Keep new ones at
+that size.
 
-| Suggested file      | Where it appears                  | Ideal size (px) |
-| ------------------- | --------------------------------- | --------------- |
-| `home.png`          | Hero, centre phone                | 1170 × 2532     |
-| `discover.png`      | Hero, left phone                  | 1170 × 2532     |
-| `plan-chat.png`     | Hero, right phone                 | 1170 × 2532     |
-| `create-plan.png`   | "How it works", step 1            | 1170 × 2532     |
-| `nearby-map.png`    | "How it works", step 2            | 1170 × 2532     |
-| `moments.png`       | "How it works", step 4            | 1170 × 2532     |
-| `notifications.png` | Notifications section (wide crop) | 1600 × 1000     |
+| File                | Where it appears                   | Status      |
+| ------------------- | ---------------------------------- | ----------- |
+| `home.png`          | Hero, centre phone                 | wired       |
+| `discover.png`      | Hero, left phone                   | wired       |
+| `plan-chat.png`     | Hero right phone + step 03         | wired       |
+| `create-plan.png`   | "How it works", step 01            | wired       |
+| `nearby-map.png`    | "How it works", step 02            | wired       |
+| `notifications.png` | Reminders section                  | wired       |
+| `moments.png`       | "How it works", step 04            | **missing** |
 
-Wiring one up:
+`moments.png` is the last one. It still renders a labelled placeholder; to wire
+it up, set `src` on step 04 in `app/page.tsx` (`steps[3].shot`).
 
-```tsx
-<PhoneShot src="/screenshots/home.png" label="Home" />
-```
+Notes:
 
-Leave `src` off and the frame keeps showing the labelled placeholder — the
-layout is identical either way, so nothing shifts when you swap them in.
+- A frame with a real `src` drops the drawn notch, since the capture already
+  includes the device status bar.
+- `WideShot` (16:10) is available in `components/screenshot.tsx` for a tablet or
+  landscape crop. Nothing uses it right now — every current capture is a phone.

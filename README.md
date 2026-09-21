@@ -21,9 +21,9 @@ npm start
 
 ## Screenshots
 
-Every app screenshot on the site is a placeholder frame right now. Drop real
-captures into `public/screenshots/` (see the table in
-`public/screenshots/README.md`) and pass the path:
+Captures live in `public/screenshots/` at 1080 x 2400, and all but one slot is
+wired (see the table in `public/screenshots/README.md` — `moments.png` is still
+outstanding). To wire a frame up, pass the path:
 
 ```tsx
 <PhoneShot src="/screenshots/home.png" label="Home" />
