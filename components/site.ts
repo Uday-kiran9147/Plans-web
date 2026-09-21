@@ -1,16 +1,19 @@
 /** Single source of truth for the copy that shows up in more than one place. */
 export const site = {
   name: "Plans",
-  tagline: "Make plans, not posts.",
+  tagline: "Make plans, things you want to do.",
   description:
     "Plans is a social app for real life. Say what you want to do, find the people who want the same thing, and turn it into a plan that actually happens.",
-  url: "https://plansapp.example",
+  /** Canonical origin. Change this if the site moves to a custom domain. */
+  url: "https://joinplans.vercel.app",
   /** One address for everything: support, privacy requests, legal. */
   supportEmail: "thehustler.dev@gmail.com",
   privacyEmail: "thehustler.dev@gmail.com",
   company: "Plans",
   jurisdiction: "Telangana, India",
   lastUpdated: "20 September 2026",
+  /** Same date, machine-readable, for sitemap lastmod. */
+  lastUpdatedIso: "2026-09-20",
   effectiveDate: "20 September 2026",
 } as const;
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "./site";
 import { ArrowRightIcon } from "./icons";
+import { LegalToc } from "./legal-toc";
 
 export type Section = { id: string; title: string };
 
@@ -52,17 +53,7 @@ export function LegalPage({
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-tertiary">
               On this page
             </p>
-            <nav className="mt-4 flex flex-col gap-1.5 border-l border-stroke pl-4">
-              {sections.map((s) => (
-                <a
-                  key={s.id}
-                  href={`#${s.id}`}
-                  className="text-sm leading-snug text-text-secondary transition hover:text-accent-soft"
-                >
-                  {s.title}
-                </a>
-              ))}
-            </nav>
+            <LegalToc sections={sections} />
 
             <div className="mt-8 rounded-2xl border border-stroke bg-surface/60 p-5">
               <p className="text-sm font-medium text-text-primary">Questions?</p>
@@ -97,20 +88,6 @@ export function LegalPage({
           </article>
         </div>
       </div>
-    </div>
-  );
-}
-
-/** Small callout used at the top of both documents. */
-export function TemplateNotice() {
-  return (
-    <div className="mb-10 rounded-2xl border border-warning/30 bg-warning/5 p-5">
-      <p className="m-0 text-sm leading-relaxed text-text-secondary">
-        <strong className="text-warning">Before you publish:</strong> this document is a
-        starting draft written around how {site.name} actually works. Fill in the
-        bracketed details (legal entity, address, store links) and have a lawyer review
-        it against the rules that apply where you operate.
-      </p>
     </div>
   );
 }

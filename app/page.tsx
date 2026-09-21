@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PhoneShot } from "@/components/screenshot";
 import { site } from "@/components/site";
@@ -70,7 +71,7 @@ const steps = [
 const features = [
   {
     icon: CalendarIcon,
-    title: "Plans, not posts",
+    title: "Plans, things you want to do",
     body: "Every object in the app carries a time and a place. If it cannot happen in real life, it does not belong here.",
   },
   {
@@ -152,9 +153,43 @@ const stats = [
   { value: "2", label: "reminders per plan" },
 ];
 
+/** Structured data: helps the FAQ and the app listing show up properly in search. */
+function StructuredData() {
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        name: site.name,
+        description: site.description,
+        applicationCategory: "SocialNetworkingApplication",
+        operatingSystem: "iOS, Android",
+        url: site.url,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Hero />
       <StatStrip />
       <HowItWorks />
@@ -185,7 +220,7 @@ function Hero() {
           </span>
 
           <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-            Make plans, <span className="text-gradient">not posts.</span>
+            Make plans, <span className="text-gradient">things you want to do</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg">
@@ -525,6 +560,13 @@ function Download() {
         <div className="pointer-events-none absolute left-1/2 top-[-8rem] h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]" />
 
         <div className="relative">
+          <Image
+            src="/app-icon.png"
+            alt=""
+            width={72}
+            height={72}
+            className="mx-auto mb-6 h-18 w-18 rounded-[1.25rem] shadow-[0_18px_40px_-16px_var(--color-accent)]"
+          />
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             Your next free evening is already there.
           </h2>

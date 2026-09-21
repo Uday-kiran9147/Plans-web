@@ -2,7 +2,7 @@
 
 Next.js 15 (App Router) + Tailwind v4 landing page, privacy policy and terms for
 the Plans app. Lives beside the Flutter app in `../social_os` and shares its
-brand palette (`lib/theme.dart`).
+brand palette (`lib/theme.dart`) and app icon (`assets/icon/`).
 
 ```bash
 npm install
@@ -11,19 +11,31 @@ npm run build
 npm start
 ```
 
-## Pages
+Do not run `npm run build` while `npm run dev` is live - they share `.next`, and
+the build wipes it out from under the dev server.
 
-| Route      | File                  |
-| ---------- | --------------------- |
-| `/`        | `app/page.tsx`        |
-| `/privacy` | `app/privacy/page.tsx`|
-| `/terms`   | `app/terms/page.tsx`  |
+## Routes
+
+| Route                  | Source                    |
+| ---------------------- | ------------------------- |
+| `/`                    | `app/page.tsx`            |
+| `/privacy`             | `app/privacy/page.tsx`    |
+| `/terms`               | `app/terms/page.tsx`      |
+| 404                    | `app/not-found.tsx`       |
+| `/opengraph-image`     | `app/opengraph-image.tsx` |
+| `/robots.txt`          | `app/robots.ts`           |
+| `/sitemap.xml`         | `app/sitemap.ts`          |
+| `/manifest.webmanifest`| `app/manifest.ts`         |
+| `/icon.png`, `/apple-icon.png` | `app/icon.png`, `app/apple-icon.png` |
+
+The link-preview card is generated at build time from `app/opengraph-image.tsx`
+(1200 x 630) and reused for Twitter. The landing page also emits JSON-LD for
+`SoftwareApplication` and the FAQ.
 
 ## Screenshots
 
-Captures live in `public/screenshots/` at 1080 x 2400, and all but one slot is
-wired (see the table in `public/screenshots/README.md` - `moments.png` is still
-outstanding). To wire a frame up, pass the path:
+Captures live in `public/screenshots/` at 1080 x 2400 and every slot is wired -
+see `public/screenshots/README.md`. To point a frame at a different file:
 
 ```tsx
 <PhoneShot src="/screenshots/home.png" label="Home" />
@@ -34,17 +46,22 @@ the layout moves when you swap them in.
 
 ## Things to change before launch
 
-- `components/site.ts` - name, domain, support/privacy emails, effective dates.
+- `components/site.ts` - `url` is set to `https://plans-web.vercel.app`. Point it
+  at the real domain; it drives canonical URLs, OG image URLs, robots and sitemap.
 - `app/privacy/page.tsx`, `app/terms/page.tsx` - the `[bracketed]` entity name,
-  registered address and liability cap; then a legal review.
-- `app/page.tsx` → `Download` - the signup form posts to `mailto:` today; point
+  registered address and liability cap; then a legal review. Once those are
+  filled in, drop `<TemplateNotice />` from both pages.
+- `app/page.tsx` -> `Download` - the signup form posts to `mailto:` today; point
   `action` at a real endpoint.
 - Store buttons in `Download` - swap the "coming soon" chips for real App Store
   and Play links.
-- `public/icon.svg` - replace with the shipping app icon, and add an
-  `app/opengraph-image.png` for link previews.
 
 ## Icons
 
-No icon library. Everything is hand-written SVG in `components/icons.tsx`,
-drawn on a 24×24 grid and inheriting `currentColor`. Add new ones there.
+No icon library. Everything is hand-written SVG in `components/icons.tsx`, drawn
+on a 24x24 grid and inheriting `currentColor`. Add new ones there.
+
+The small `LogoMark` in the header and footer is a drawn "P" mark, not the app
+icon - the real icon has the word "Plans" in it, which turns to mush at 32px and
+duplicates the wordmark beside it. The real icon is used where it has room: the
+favicon, the web manifest and the download CTA.

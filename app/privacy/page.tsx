@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalPage, TemplateNotice, type Section } from "@/components/legal";
+import { LegalPage, type Section } from "@/components/legal";
 import { site } from "@/components/site";
 
 export const metadata: Metadata = {
@@ -33,7 +33,6 @@ export default function PrivacyPolicy() {
       intro={`What ${site.name} collects, why it collects it, and the control you keep over it - in plain language.`}
       sections={sections}
     >
-      <TemplateNotice />
 
       <h2 id="summary">The short version</h2>
       <p>

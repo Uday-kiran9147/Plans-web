@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     title: `${site.name} - ${site.tagline}`,
     description: site.description,
   },
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  alternates: {
+    canonical: "/",
   },
 };
 
