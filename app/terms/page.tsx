@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LegalPage, TemplateNotice, type Section } from "@/components/legal";
+import { LegalPage, type Section } from "@/components/legal";
 import { site } from "@/components/site";
 
 export const metadata: Metadata = {
@@ -38,7 +38,6 @@ export default function Terms() {
       intro={`The agreement between you and ${site.name}. It covers what you can expect from us, and what we expect from you.`}
       sections={sections}
     >
-      <TemplateNotice />
 
       <h2 id="agreement">1. This agreement</h2>
       <p>
