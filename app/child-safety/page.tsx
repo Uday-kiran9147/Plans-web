@@ -111,15 +111,13 @@ export default function ChildSafety() {
       <h3>In the app</h3>
       <p>
         Every profile, plan and message in {site.name} carries a <strong>Report</strong>{" "}
-        control, one tap from the content itself, alongside <strong>Block</strong>. Pick
-        the reason that fits best - for CSAE, that is normally{" "}
-        <em>Inappropriate content</em> or <em>Unsafe or threatening behaviour</em>. You do
-        not need to be the person affected to report, and the person you report is never
-        told who reported them.
+        control, one tap from the content itself, alongside <strong>Block</strong>. Choose{" "}
+        <strong>Child safety concern</strong> - it is the first reason in the list, and
+        those reports are reviewed ahead of every other queue.
       </p>
       <p>
-        If your report involves a child, please also email the address below. It reaches
-        us directly and is the fastest route to a human.
+        You do not need to be the person affected to report, and the person you report is
+        never told who reported them.
       </p>
 
       <h3>By email</h3>
