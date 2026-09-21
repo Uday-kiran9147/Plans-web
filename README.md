@@ -1,4 +1,4 @@
-# Plans — marketing site
+# Plans - marketing site
 
 Next.js 15 (App Router) + Tailwind v4 landing page, privacy policy and terms for
 the Plans app. Lives beside the Flutter app in `../social_os` and shares its
@@ -22,7 +22,7 @@ npm start
 ## Screenshots
 
 Captures live in `public/screenshots/` at 1080 x 2400, and all but one slot is
-wired (see the table in `public/screenshots/README.md` — `moments.png` is still
+wired (see the table in `public/screenshots/README.md` - `moments.png` is still
 outstanding). To wire a frame up, pass the path:
 
 ```tsx
@@ -34,14 +34,14 @@ the layout moves when you swap them in.
 
 ## Things to change before launch
 
-- `components/site.ts` — name, domain, support/privacy emails, effective dates.
-- `app/privacy/page.tsx`, `app/terms/page.tsx` — the `[bracketed]` entity name,
+- `components/site.ts` - name, domain, support/privacy emails, effective dates.
+- `app/privacy/page.tsx`, `app/terms/page.tsx` - the `[bracketed]` entity name,
   registered address and liability cap; then a legal review.
-- `app/page.tsx` → `Download` — the signup form posts to `mailto:` today; point
+- `app/page.tsx` → `Download` - the signup form posts to `mailto:` today; point
   `action` at a real endpoint.
-- Store buttons in `Download` — swap the "coming soon" chips for real App Store
+- Store buttons in `Download` - swap the "coming soon" chips for real App Store
   and Play links.
-- `public/icon.svg` — replace with the shipping app icon, and add an
+- `public/icon.svg` - replace with the shipping app icon, and add an
   `app/opengraph-image.png` for link previews.
 
 ## Icons

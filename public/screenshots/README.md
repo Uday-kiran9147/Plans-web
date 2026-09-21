@@ -1,7 +1,7 @@
 # App screenshots
 
 Captures are 1080 × 2400 (9:20), which is exactly the aspect ratio of the phone
-frame in `components/screenshot.tsx` — so nothing is cropped. Keep new ones at
+frame in `components/screenshot.tsx` - so nothing is cropped. Keep new ones at
 that size.
 
 | File                | Where it appears                   | Status      |
@@ -22,4 +22,4 @@ Notes:
 - A frame with a real `src` drops the drawn notch, since the capture already
   includes the device status bar.
 - `WideShot` (16:10) is available in `components/screenshot.tsx` for a tablet or
-  landscape crop. Nothing uses it right now — every current capture is a phone.
+  landscape crop. Nothing uses it right now - every current capture is a phone.

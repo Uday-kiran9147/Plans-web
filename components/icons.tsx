@@ -1,5 +1,5 @@
 /**
- * Hand-rolled SVG icon set — no icon library.
+ * Hand-rolled SVG icon set - no icon library.
  * Every icon draws on a 24x24 grid and inherits `currentColor`.
  */
 type IconProps = React.SVGProps<SVGSVGElement>;

@@ -24,7 +24,7 @@ const steps = [
     n: "01",
     icon: SparkIcon,
     title: "Say what you want to do",
-    body: "Coffee at 6. A badminton court. Someone to see the late show with. One line of intent — no caption, no audience.",
+    body: "Coffee at 6. A badminton court. Someone to see the late show with. One line of intent - no caption, no audience.",
     shot: {
       src: "/screenshots/create-plan.png",
       label: "Create plan",
@@ -57,7 +57,7 @@ const steps = [
     n: "04",
     icon: CameraIcon,
     title: "Meet, then keep the moment",
-    body: "Afterwards, save a moment with the people who came. That is the feed — proof you went, not proof you posted.",
+    body: "Afterwards, save a moment with the people who came. That is the feed - proof you went, not proof you posted.",
     shot: {
       // Drop /screenshots/moments.png in and set src here.
       src: "/screenshots/moments.png",
@@ -81,7 +81,7 @@ const features = [
   {
     icon: BellIcon,
     title: "Reminders that survive a reboot",
-    body: "Join a plan and you get a nudge 30 minutes before and again at start time — scheduled on the device, not in a feed.",
+    body: "Join a plan and you get a nudge 30 minutes before and again at start time - scheduled on the device, not in a feed.",
   },
   {
     icon: PeopleIcon,
@@ -96,7 +96,7 @@ const features = [
   {
     icon: ShieldIcon,
     title: "Report and block, one tap deep",
-    body: "Safety controls live where the risk is — on every profile, plan and message — not buried four screens into settings.",
+    body: "Safety controls live where the risk is - on every profile, plan and message - not buried four screens into settings.",
   },
 ];
 
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: "Do I have to share my location?",
-    a: "Only if you want the nearby map and distance-based discovery. Deny the permission and the rest of the app still works — you can join plans by invite, search and interest.",
+    a: "Only if you want the nearby map and distance-based discovery. Deny the permission and the rest of the app still works - you can join plans by invite, search and interest.",
   },
   {
     q: "How do notifications work?",
@@ -395,7 +395,7 @@ function Notifications() {
             The plan reminds you. Not an algorithm.
           </h2>
           <p className="mt-5 leading-relaxed text-text-secondary">
-            Notifications exist to get you out the door on time — nothing else. No
+            Notifications exist to get you out the door on time - nothing else. No
             re-engagement pings, no &ldquo;someone you may know&rdquo; at 11pm.
           </p>
 
@@ -437,7 +437,7 @@ function PrivacyFirst() {
         <SectionHeading
           eyebrow="Privacy by design"
           title="Meeting strangers should feel safe, not exposing."
-          body="Plans runs on the smallest amount of data that makes a meet-up work — and all of it is written down in plain language."
+          body="Plans runs on the smallest amount of data that makes a meet-up work - and all of it is written down in plain language."
         />
 
         <div className="mt-14 grid gap-4 md:grid-cols-3">

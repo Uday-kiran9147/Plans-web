@@ -9,7 +9,7 @@ import Image from "next/image";
  * ratio, so the layout never shifts when the real images land.
  */
 type ShotProps = {
-  /** e.g. "/screenshots/home.png" — leave undefined to show the placeholder. */
+  /** e.g. "/screenshots/home.png" - leave undefined to show the placeholder. */
   src?: string;
   label: string;
   caption?: string;

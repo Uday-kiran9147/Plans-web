@@ -30,7 +30,7 @@ export default function PrivacyPolicy() {
     <LegalPage
       kind="Privacy"
       title="Privacy Policy"
-      intro={`What ${site.name} collects, why it collects it, and the control you keep over it — in plain language.`}
+      intro={`What ${site.name} collects, why it collects it, and the control you keep over it - in plain language.`}
       sections={sections}
     >
       <TemplateNotice />
@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
           it with advertising networks or data brokers.
         </li>
         <li>
-          Your precise location is never shown to other users — only approximate
+          Your precise location is never shown to other users - only approximate
           distance, and only while you choose to appear nearby.
         </li>
         <li>
@@ -82,27 +82,27 @@ export default function PrivacyPolicy() {
       <h3>2.1 Information you give us</h3>
       <ul>
         <li>
-          <strong>Account details</strong> — your email address and a password (or a sign
+          <strong>Account details</strong> - your email address and a password (or a sign
           in token from a provider you choose), plus your display name and username.
         </li>
         <li>
-          <strong>Profile</strong> — your photo, bio, city, age range and the interests
+          <strong>Profile</strong> - your photo, bio, city, age range and the interests
           you pick during setup. Everything here is optional except a name.
         </li>
         <li>
-          <strong>Plans and intent</strong> — the activity, time, place, group size and
+          <strong>Plans and intent</strong> - the activity, time, place, group size and
           visibility of any plan you create or join.
         </li>
         <li>
-          <strong>Messages</strong> — what you write in a plan room or a direct message,
+          <strong>Messages</strong> - what you write in a plan room or a direct message,
           and any image you send.
         </li>
         <li>
-          <strong>Moments</strong> — photos and notes you save after a plan, and the
+          <strong>Moments</strong> - photos and notes you save after a plan, and the
           people you tag in them.
         </li>
         <li>
-          <strong>Support and safety</strong> — what you tell us in an email, a report or
+          <strong>Support and safety</strong> - what you tell us in an email, a report or
           a block, including the content you report.
         </li>
       </ul>
@@ -110,24 +110,24 @@ export default function PrivacyPolicy() {
       <h3>2.2 Information we collect automatically</h3>
       <ul>
         <li>
-          <strong>Device and app data</strong> — device model, operating system version,
+          <strong>Device and app data</strong> - device model, operating system version,
           app version, language, and a randomly generated installation identifier.
         </li>
         <li>
-          <strong>Usage data</strong> — screens opened, features used, plans created or
+          <strong>Usage data</strong> - screens opened, features used, plans created or
           joined, and the time of those actions. We use this to understand what works,
           not to profile you.
         </li>
         <li>
-          <strong>Approximate location</strong> — only with your permission, and only as
+          <strong>Approximate location</strong> - only with your permission, and only as
           described in section 4.
         </li>
         <li>
-          <strong>Diagnostics</strong> — crash reports and error logs, which may include
+          <strong>Diagnostics</strong> - crash reports and error logs, which may include
           the state of the app at the moment it failed.
         </li>
         <li>
-          <strong>Website data</strong> — if you visit this site, basic request logs
+          <strong>Website data</strong> - if you visit this site, basic request logs
           (IP address, browser type, referring page) kept for security and aggregate
           traffic counts.
         </li>
@@ -226,7 +226,7 @@ export default function PrivacyPolicy() {
       </p>
       <p>
         You can turn notifications off in the app or in your device settings without
-        losing access to anything — every alert is also written to the in-app inbox.
+        losing access to anything - every alert is also written to the in-app inbox.
       </p>
 
       <h2 id="sharing">6. When we share information</h2>
@@ -271,24 +271,24 @@ export default function PrivacyPolicy() {
       <h2 id="retention">8. How long we keep it</h2>
       <ul>
         <li>
-          <strong>Account and profile</strong> — while your account is active.
+          <strong>Account and profile</strong> - while your account is active.
         </li>
         <li>
-          <strong>Plans</strong> — for a limited period after the plan ends, so it can
+          <strong>Plans</strong> - for a limited period after the plan ends, so it can
           appear in your history and support any related report.
         </li>
         <li>
-          <strong>Plan room messages</strong> — deleted shortly after the plan ends,
+          <strong>Plan room messages</strong> - deleted shortly after the plan ends,
           unless preserved for a safety report or a legal obligation.
         </li>
         <li>
-          <strong>Moments</strong> — until you delete them or delete your account.
+          <strong>Moments</strong> - until you delete them or delete your account.
         </li>
         <li>
-          <strong>Diagnostics and logs</strong> — typically up to 90 days.
+          <strong>Diagnostics and logs</strong> - typically up to 90 days.
         </li>
         <li>
-          <strong>Safety and moderation records</strong> — kept longer where needed to
+          <strong>Safety and moderation records</strong> - kept longer where needed to
           prevent a banned user from returning or to meet a legal requirement.
         </li>
       </ul>
@@ -342,8 +342,8 @@ export default function PrivacyPolicy() {
       <p>
         We operate from {site.jurisdiction} and use cloud infrastructure that may store or
         process data in other countries. Where information leaves the country it was
-        collected in, we rely on appropriate safeguards — such as standard contractual
-        clauses — to protect it.
+        collected in, we rely on appropriate safeguards - such as standard contractual
+        clauses - to protect it.
       </p>
 
       <h2 id="changes">13. Changes to this policy</h2>

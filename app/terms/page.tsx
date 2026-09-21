@@ -121,8 +121,8 @@ export default function Terms() {
           that sexualises minors in any way;
         </li>
         <li>
-          share another person&rsquo;s private information — including their address,
-          phone number or location — without their consent;
+          share another person&rsquo;s private information - including their address,
+          phone number or location - without their consent;
         </li>
         <li>
           solicit money, advertise, recruit, or run commercial promotions or spam;
@@ -171,7 +171,7 @@ export default function Terms() {
 
       <h2 id="content">7. Your content</h2>
       <p>
-        You keep ownership of everything you create on the Service — your profile, plans,
+        You keep ownership of everything you create on the Service - your profile, plans,
         messages, photos and moments (&ldquo;Your Content&rdquo;).
       </p>
       <p>
@@ -242,8 +242,8 @@ export default function Terms() {
 
       <h2 id="third-party">12. Third-party services</h2>
       <p>
-        The Service relies on third parties — app stores, cloud hosting, maps, push
-        notification delivery — and may link to places we do not control. Their terms and
+        The Service relies on third parties - app stores, cloud hosting, maps, push
+        notification delivery - and may link to places we do not control. Their terms and
         privacy policies apply to their part of the experience, and we are not responsible
         for their content or availability.
       </p>
@@ -265,7 +265,7 @@ export default function Terms() {
         We may suspend or terminate your access, with notice where reasonably practicable,
         if you breach these Terms, if your conduct puts another person or the Service at
         risk, or if we are required to do so by law. Sections that by their nature should
-        survive termination — including sections 7, 11, 15, 16, 17 and 18 — do.
+        survive termination - including sections 7, 11, 15, 16, 17 and 18 - do.
       </p>
 
       <h2 id="disclaimer">15. Disclaimers</h2>
@@ -313,7 +313,7 @@ export default function Terms() {
       </p>
       <p>
         Before starting formal proceedings, please contact us at{" "}
-        <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a> — most problems can
+        <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a> - most problems can
         be settled quickly that way.
       </p>
 
