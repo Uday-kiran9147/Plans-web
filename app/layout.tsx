@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { site } from "@/components/site";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -61,6 +62,8 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        {/* Page views only, no cookies and no cross-site identifiers. */}
+        <Analytics />
       </body>
     </html>
   );

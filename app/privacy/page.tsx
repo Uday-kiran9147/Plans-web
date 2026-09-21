@@ -127,8 +127,11 @@ export default function PrivacyPolicy() {
         </li>
         <li>
           <strong>Website data</strong> - if you visit this site, basic request logs
-          (IP address, browser type, referring page) kept for security and aggregate
-          traffic counts.
+          (IP address, browser type, referring page) kept for security, plus
+          privacy-friendly page view analytics. The analytics count visits, the page
+          visited, the referring site, and coarse device and country information. They
+          set <strong>no cookies</strong>, do not follow you across other sites, and do
+          not build a profile of you.
         </li>
       </ul>
 
