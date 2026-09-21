@@ -164,6 +164,16 @@ export function AndroidIcon(props: IconProps) {
   );
 }
 
+export function BrowserIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3" y="4.5" width="18" height="15" rx="2.5" />
+      <path d="M3 9h18" />
+      <path d="M6.5 6.75h.01M9 6.75h.01" />
+    </Svg>
+  );
+}
+
 export function LogoMark(props: IconProps) {
   return (
     <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
