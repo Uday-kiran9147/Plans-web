@@ -5,6 +5,13 @@ import { LegalToc } from "./legal-toc";
 
 export type Section = { id: string; title: string };
 
+/** Every published legal document, so each page can link to the others. */
+export const documents = [
+  { kind: "Privacy", href: "/privacy", label: "Privacy Policy" },
+  { kind: "Terms", href: "/terms", label: "Terms & Conditions" },
+  { kind: "Child safety", href: "/child-safety", label: "Child Safety Standards" },
+] as const;
+
 /**
  * Shared chrome for /privacy and /terms: title block, sticky table of
  * contents, prose column. Each page passes its own sections + body.
@@ -73,17 +80,24 @@ export function LegalPage({
           <article className="legal-prose max-w-2xl">
             {children}
 
-            <div className="mt-14 flex flex-col gap-3 rounded-2xl border border-stroke bg-surface/60 p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mt-14 flex flex-col gap-4 rounded-2xl border border-stroke bg-surface/60 p-6 sm:flex-row sm:items-center sm:justify-between">
               <p className="m-0 text-sm text-text-secondary">
-                Looking for the other document?
+                Looking for another document?
               </p>
-              <Link
-                href={kind === "Privacy" ? "/terms" : "/privacy"}
-                className="inline-flex items-center gap-2 self-start rounded-full border border-stroke bg-ink px-4 py-2.5 text-sm font-medium text-text-primary no-underline transition hover:border-accent/50 sm:self-auto"
-              >
-                {kind === "Privacy" ? "Terms & Conditions" : "Privacy Policy"}
-                <ArrowRightIcon className="h-4 w-4" />
-              </Link>
+              <div className="flex flex-wrap gap-2">
+                {documents
+                  .filter((doc) => doc.kind !== kind)
+                  .map((doc) => (
+                    <Link
+                      key={doc.href}
+                      href={doc.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-stroke bg-ink px-4 py-2.5 text-sm font-medium text-text-primary no-underline transition hover:border-accent/50"
+                    >
+                      {doc.label}
+                      <ArrowRightIcon className="h-4 w-4" />
+                    </Link>
+                  ))}
+              </div>
             </div>
           </article>
         </div>

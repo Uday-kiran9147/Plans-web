@@ -17,6 +17,7 @@ const columns = [
     links: [
       { href: "/privacy", label: "Privacy Policy" },
       { href: "/terms", label: "Terms & Conditions" },
+      { href: "/child-safety", label: "Child Safety Standards" },
     ],
   },
   {

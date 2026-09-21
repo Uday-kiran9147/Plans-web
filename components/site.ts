@@ -9,6 +9,8 @@ export const site = {
   /** One address for everything: support, privacy requests, legal. */
   supportEmail: "thehustler.dev@gmail.com",
   privacyEmail: "thehustler.dev@gmail.com",
+  /** Published on /child-safety and given to Google Play. Must be monitored. */
+  childSafetyEmail: "thehustler.dev@gmail.com",
   company: "Plans",
   jurisdiction: "Telangana, India",
   lastUpdated: "20 September 2026",
