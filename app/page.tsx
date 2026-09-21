@@ -7,6 +7,7 @@ import {
   AppleIcon,
   ArrowRightIcon,
   BellIcon,
+  BrowserIcon,
   CalendarIcon,
   CameraIcon,
   ChatIcon,
@@ -572,8 +573,19 @@ function Download() {
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-pretty leading-relaxed text-text-secondary">
             Join the beta list and the invite arrives the day {site.name} opens in your
-            city.
+            city. Or skip the wait entirely - {site.name} already runs in your browser.
           </p>
+
+          <a
+            href={site.webAppUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft"
+          >
+            <BrowserIcon className="h-4 w-4" />
+            Open {site.name} in your browser
+            <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
 
           {/* Swap `action` for your real signup endpoint when one exists. */}
           <form
