@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { PhoneShot } from "@/components/screenshot";
 import { site } from "@/components/site";
+import { PlanPassStudio } from "@/components/plan-pass-studio";
+import { ArtworkGallery } from "@/components/artwork-gallery";
+import { InteractiveSimulator } from "@/components/interactive-simulator";
+import { HeroStage } from "@/components/hero-stage";
 import {
   AndroidIcon,
   AppleIcon,
@@ -193,7 +197,10 @@ export default function Home() {
       <StructuredData />
       <Hero />
       <StatStrip />
+      <PlanPassStudio />
+      <ArtworkGallery />
       <HowItWorks />
+      <InteractiveSimulator />
       <Features />
       <Notifications />
       <PrivacyFirst />
@@ -205,53 +212,62 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
+    <section className="relative overflow-hidden pt-20 pb-20 sm:pt-28 sm:pb-28">
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_20%,transparent_75%)]" />
       <div className="pointer-events-none absolute left-1/2 top-[-14rem] h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[130px]" />
       <div className="pointer-events-none absolute right-[-12rem] top-40 h-[24rem] w-[24rem] rounded-full bg-orange/15 blur-[120px]" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="mx-auto max-w-3xl animate-rise text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface/70 px-3.5 py-1.5 text-xs text-text-secondary">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
+        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+          {/* Left Column: Headline & CTA */}
+          <div className="animate-rise text-center lg:text-left">
+            <span className="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface/70 px-3.5 py-1.5 text-xs text-text-secondary">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
+              </span>
+              Public beta opening soon on iOS &amp; Android
             </span>
-            Public beta opening soon on iOS &amp; Android
-          </span>
 
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
-            Make plans, <span className="text-gradient">things you want to do</span>
-          </h1>
+            <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl xl:text-6xl">
+              Make plans, <span className="text-gradient">things you want to do</span>
+            </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg">
-            {site.name} is a social app for real life. Say what you want to do, find the
-            people who want the same thing, and turn it into something that actually
-            happens tonight.
-          </p>
+            <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg lg:mx-0">
+              {site.name} is a social app for real life. Say what you want to do, find the
+              people who want the same thing, and turn it into something that actually
+              happens tonight.
+            </p>
 
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="#download"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft sm:w-auto"
-            >
-              Get early access
-              <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              href="#how"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3.5 text-sm font-medium text-text-primary transition hover:border-accent/50 hover:bg-surface sm:w-auto"
-            >
-              See how it works
-            </Link>
+            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+              <Link
+                href="#download"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
+              >
+                Get early access
+                <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                href="#pass-studio"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3.5 text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
+              >
+                Create a pass
+              </Link>
+            </div>
+
+            <p className="mt-5 text-xs text-text-tertiary">
+              Free to use · No ads · No endless scroll
+            </p>
           </div>
 
-          <p className="mt-5 text-xs text-text-tertiary">
-            Free to use · No ads · No endless scroll
-          </p>
+          {/* Right Column: Interactive Cut-Paper Hero Stage */}
+          <div className="flex justify-center">
+            <HeroStage />
+          </div>
         </div>
 
-        <div className="relative mt-16 flex items-end justify-center gap-4 sm:mt-20 sm:gap-8">
+        {/* Screenshots Showcase Row */}
+        <div className="relative mt-20 flex items-end justify-center gap-4 sm:mt-24 sm:gap-8">
           <PhoneShot
             src="/screenshots/discover.png"
             label="Discover"

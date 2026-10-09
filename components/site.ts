@@ -26,7 +26,10 @@ export const site = {
 } as const;
 
 export const nav = [
+  { href: "/#pass-studio", label: "Pass Studio" },
+  { href: "/#artwork", label: "Art Direction" },
   { href: "/#how", label: "How it works" },
+  { href: "/#simulator", label: "Simulator" },
   { href: "/#features", label: "Features" },
   { href: "/#privacy-first", label: "Privacy" },
   { href: "/#faq", label: "FAQ" },
