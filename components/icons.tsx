@@ -176,22 +176,17 @@ export function BrowserIcon(props: IconProps) {
 
 export function LogoMark(props: IconProps) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true" {...props}>
-      <rect width="32" height="32" rx="9" fill="url(#logo-grad)" />
-      <path
-        d="M10 21.5V11a1 1 0 0 1 1-1h5.2a4 4 0 0 1 0 8H13"
-        stroke="#fff"
-        strokeWidth="2.2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="21.5" cy="21.5" r="2" fill="#fff" />
-      <defs>
-        <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32">
-          <stop stopColor="#9B83FF" />
-          <stop offset="1" stopColor="#5B3EE8" />
-        </linearGradient>
-      </defs>
+    <svg viewBox="0 0 100 100" fill="none" aria-hidden="true" {...props}>
+      <rect width="100" height="100" rx="28" fill="#6A00F4" />
+      <g stroke="#FFF0C8" strokeWidth="8" strokeLinecap="round">
+        <path d="M28 68V52Q28 42 38 42H42" />
+        <path d="M72 32V48Q72 58 62 58H58" />
+      </g>
+      <g fill="#FFF0C8">
+        <circle cx="28" cy="27" r="6" />
+        <circle cx="72" cy="73" r="6" />
+        <circle cx="50" cy="50" r="6" />
+      </g>
     </svg>
   );
 }

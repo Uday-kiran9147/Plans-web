@@ -19,7 +19,7 @@ export default async function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #14121f 0%, #0b0b10 55%, #101a1d 100%)",
+          background: "linear-gradient(135deg, #302547 0%, #140b24 55%, #221239 100%)",
           padding: "72px 80px",
           fontFamily: "sans-serif",
         }}
@@ -33,7 +33,7 @@ export default async function Image() {
             width: 760,
             height: 520,
             borderRadius: 9999,
-            background: "#7c5cff",
+            background: "#6A00F4",
             opacity: 0.35,
             filter: "blur(140px)",
           }}
@@ -45,18 +45,18 @@ export default async function Image() {
               width: 64,
               height: 64,
               borderRadius: 18,
-              background: "linear-gradient(135deg, #9b83ff 0%, #5b3ee8 100%)",
+              background: "#6A00F4",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 34,
               fontWeight: 700,
-              color: "#ffffff",
+              color: "#FFF0C8",
             }}
           >
             P
           </div>
-          <div style={{ fontSize: 34, fontWeight: 600, color: "#f2f2f5" }}>{site.name}</div>
+          <div style={{ fontSize: 34, fontWeight: 600, color: "#FFF0C8" }}>{site.name}</div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -66,7 +66,7 @@ export default async function Image() {
               fontSize: 92,
               fontWeight: 700,
               letterSpacing: "-0.03em",
-              color: "#f2f2f5",
+              color: "#FFF0C8",
               lineHeight: 1.05,
             }}
           >
@@ -78,7 +78,7 @@ export default async function Image() {
               fontSize: 92,
               fontWeight: 700,
               letterSpacing: "-0.03em",
-              color: "#9b83ff",
+              color: "#FF9B50",
               lineHeight: 1.05,
             }}
           >
@@ -89,7 +89,7 @@ export default async function Image() {
               display: "flex",
               marginTop: 28,
               fontSize: 30,
-              color: "#9a9aab",
+              color: "#C9BED9",
               maxWidth: 820,
               lineHeight: 1.4,
             }}
@@ -99,7 +99,7 @@ export default async function Image() {
           </div>
         </div>
 
-        <div style={{ display: "flex", gap: 14, fontSize: 24, color: "#6a6a7c" }}>
+        <div style={{ display: "flex", gap: 14, fontSize: 24, color: "#9585AE" }}>
           <span>Free to use</span>
           <span>·</span>
           <span>No ads</span>

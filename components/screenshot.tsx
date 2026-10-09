@@ -19,13 +19,13 @@ type ShotProps = {
 
 function Placeholder({ label, caption }: { label: string; caption?: string }) {
   return (
-    <div className="relative flex h-full w-full flex-col items-center justify-center gap-3 overflow-hidden bg-[linear-gradient(160deg,#16161f_0%,#101017_55%,#171326_100%)] px-6 text-center">
+    <div className="relative flex h-full w-full flex-col items-center justify-center gap-3 overflow-hidden bg-[linear-gradient(160deg,#241838_0%,#140b24_55%,#302547_100%)] px-6 text-center">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.35] grid-bg"
         style={{ backgroundSize: "34px 34px" }}
       />
       <div className="pointer-events-none absolute -top-20 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-accent/25 blur-3xl" />
-      <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-dashed border-accent/50 bg-accent/10">
+      <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl border border-dashed border-accent-soft/50 bg-accent/15">
         <svg
           viewBox="0 0 24 24"
           className="h-5 w-5 text-accent-soft"

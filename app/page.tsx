@@ -207,8 +207,8 @@ function Hero() {
   return (
     <section className="relative overflow-hidden pt-28 pb-20 sm:pt-36 sm:pb-28">
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_20%,transparent_75%)]" />
-      <div className="pointer-events-none absolute left-1/2 top-[-14rem] h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-accent/20 blur-[130px]" />
-      <div className="pointer-events-none absolute right-[-12rem] top-40 h-[22rem] w-[22rem] rounded-full bg-[#2fc1b5]/10 blur-[110px]" />
+      <div className="pointer-events-none absolute left-1/2 top-[-14rem] h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[130px]" />
+      <div className="pointer-events-none absolute right-[-12rem] top-40 h-[24rem] w-[24rem] rounded-full bg-orange/15 blur-[120px]" />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <div className="mx-auto max-w-3xl animate-rise text-center">
@@ -556,7 +556,7 @@ function Download() {
 
   return (
     <section id="download" className="scroll-mt-24 px-5 pb-24 sm:px-8 sm:pb-32">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-stroke bg-[linear-gradient(140deg,#16131f_0%,#0f0f16_50%,#131a20_100%)] px-6 py-16 text-center sm:px-14">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-stroke bg-[linear-gradient(140deg,#24153a_0%,#140b24_50%,#2e1b48_100%)] px-6 py-16 text-center sm:px-14">
         <div className="pointer-events-none absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000,transparent_75%)]" />
         <div className="pointer-events-none absolute left-1/2 top-[-8rem] h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]" />
 
