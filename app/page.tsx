@@ -212,16 +212,16 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-20 sm:pt-28 sm:pb-28">
+    <section className="relative overflow-hidden pt-10 pb-14 sm:pt-20 sm:pb-24">
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-60 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,#000_20%,transparent_75%)]" />
-      <div className="pointer-events-none absolute left-1/2 top-[-14rem] h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[130px]" />
-      <div className="pointer-events-none absolute right-[-12rem] top-40 h-[24rem] w-[24rem] rounded-full bg-orange/15 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-[-14rem] h-[26rem] w-[40rem] sm:h-[30rem] sm:w-[52rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[100px] sm:blur-[130px]" />
+      <div className="pointer-events-none absolute right-[-10rem] top-40 h-[18rem] w-[18rem] sm:h-[24rem] sm:w-[24rem] rounded-full bg-orange/15 blur-[90px] sm:blur-[120px]" />
 
-      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
           {/* Left Column: Headline & CTA */}
           <div className="animate-rise text-center lg:text-left">
-            <span className="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface/70 px-3.5 py-1.5 text-xs text-text-secondary">
+            <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-stroke bg-surface/70 px-3 py-1 sm:px-3.5 sm:py-1.5 text-[11px] sm:text-xs text-text-secondary">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
@@ -229,63 +229,63 @@ function Hero() {
               Public beta opening soon on iOS &amp; Android
             </span>
 
-            <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-5xl xl:text-6xl">
+            <h1 className="mt-4 sm:mt-6 text-balance text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-semibold leading-[1.08] tracking-tight">
               Make plans, <span className="text-gradient">things you want to do</span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-text-secondary sm:text-lg lg:mx-0">
+            <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-pretty text-sm sm:text-base lg:text-lg leading-relaxed text-text-secondary lg:mx-0">
               {site.name} is a social app for real life. Say what you want to do, find the
               people who want the same thing, and turn it into something that actually
               happens tonight.
             </p>
 
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="mt-7 sm:mt-9 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row lg:justify-start">
               <Link
                 href="#download"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] sm:shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
               >
                 Get early access
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
                 href="#pass-studio"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3.5 text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
               >
                 Create a pass
               </Link>
             </div>
 
-            <p className="mt-5 text-xs text-text-tertiary">
+            <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-text-tertiary">
               Free to use · No ads · No endless scroll
             </p>
           </div>
 
           {/* Right Column: Interactive Cut-Paper Hero Stage */}
-          <div className="flex justify-center">
+          <div className="flex justify-center w-full">
             <HeroStage />
           </div>
         </div>
 
         {/* Screenshots Showcase Row */}
-        <div className="relative mt-20 flex items-end justify-center gap-4 sm:mt-24 sm:gap-8">
+        <div className="relative mt-12 sm:mt-20 flex items-end justify-center gap-3 sm:gap-8">
           <PhoneShot
             src="/screenshots/discover.png"
             label="Discover"
             caption="People and plans near you."
-            className="hidden w-[13rem] translate-y-8 -rotate-6 opacity-90 md:block"
+            className="hidden w-[12rem] translate-y-8 -rotate-6 opacity-90 md:block"
           />
           <PhoneShot
             src="/screenshots/home.png"
             label="Home"
             caption="Everything you said yes to."
-            className="z-10 animate-float"
+            className="z-10 animate-float w-full max-w-[15rem] sm:max-w-[17rem]"
             priority
           />
           <PhoneShot
             src="/screenshots/plan-chat.png"
             label="Plan chat"
             caption="Sort the details, then meet."
-            className="hidden w-[13rem] translate-y-8 rotate-6 opacity-90 md:block"
+            className="hidden w-[12rem] translate-y-8 rotate-6 opacity-90 md:block"
           />
         </div>
       </div>
@@ -296,13 +296,13 @@ function Hero() {
 function StatStrip() {
   return (
     <section className="border-y border-stroke bg-ink-soft/60">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-5 py-10 sm:px-8 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-6 sm:gap-y-8 px-4 py-8 sm:px-6 sm:py-10 lg:grid-cols-4">
         {stats.map((stat) => (
           <div key={stat.label} className="px-2 text-center lg:px-6">
-            <p className="text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight text-text-primary">
               {stat.value}
             </p>
-            <p className="mt-1.5 text-xs text-text-tertiary sm:text-sm">{stat.label}</p>
+            <p className="mt-1 text-xs text-text-tertiary sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
@@ -324,11 +324,11 @@ function SectionHeading({
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h2 className="mt-3 sm:mt-4 text-balance text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
         {title}
       </h2>
       {body ? (
-        <p className="mt-4 text-pretty leading-relaxed text-text-secondary">{body}</p>
+        <p className="mt-3 sm:mt-4 text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">{body}</p>
       ) : null}
     </div>
   );
@@ -336,31 +336,31 @@ function SectionHeading({
 
 function HowItWorks() {
   return (
-    <section id="how" className="scroll-mt-24 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="how" className="scroll-mt-24 py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="How it works"
           title="Four steps from a thought to a table for three."
           body="The whole app is one loop. Nothing in it exists to keep you on your phone longer than it takes to make the plan."
         />
 
-        <div className="mt-16 flex flex-col gap-16 sm:gap-24">
+        <div className="mt-10 sm:mt-16 flex flex-col gap-12 sm:gap-20">
           {steps.map((step, i) => {
             const Icon = step.icon;
             const flip = i % 2 === 1;
             return (
-              <div key={step.n} className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+              <div key={step.n} className="grid items-center gap-8 md:grid-cols-2 md:gap-16">
                 <div className={flip ? "md:order-2" : undefined}>
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-accent-soft">
-                      <Icon className="h-5 w-5" />
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <span className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl sm:rounded-2xl border border-accent/30 bg-accent/10 text-accent-soft">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                     </span>
-                    <span className="font-mono text-sm text-text-tertiary">{step.n}</span>
+                    <span className="font-mono text-xs sm:text-sm text-text-tertiary">{step.n}</span>
                   </div>
-                  <h3 className="mt-5 text-2xl font-semibold tracking-tight sm:text-[1.75rem]">
+                  <h3 className="mt-3 sm:mt-5 text-xl sm:text-2xl md:text-[1.75rem] font-semibold tracking-tight">
                     {step.title}
                   </h3>
-                  <p className="mt-4 max-w-md leading-relaxed text-text-secondary">{step.body}</p>
+                  <p className="mt-2.5 sm:mt-4 max-w-md text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">{step.body}</p>
                 </div>
 
                 <div
@@ -368,10 +368,8 @@ function HowItWorks() {
                     flip ? "flex justify-center md:order-1" : "flex justify-center"
                   }
                 >
-                  {/* Needs an explicit width: it is the flex item, and the
-                      frame inside it sizes with w-full. */}
-                  <div className="relative w-full max-w-[17rem]">
-                    <div className="pointer-events-none absolute -inset-10 rounded-full bg-accent/10 blur-3xl" />
+                  <div className="relative w-full max-w-[14.5rem] sm:max-w-[17rem]">
+                    <div className="pointer-events-none absolute -inset-6 sm:-inset-10 rounded-full bg-accent/10 blur-2xl sm:blur-3xl" />
                     <PhoneShot
                       src={step.shot.src}
                       label={step.shot.label}
@@ -393,29 +391,29 @@ function Features() {
   return (
     <section
       id="features"
-      className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-24 sm:py-32"
+      className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-16 sm:py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Features"
           title="Built for the part of socialising that happens offline."
           body="Every feature answers one question: does this help two people end up in the same place at the same time?"
         />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-14 grid gap-3.5 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => {
             const Icon = f.icon;
             return (
               <article
                 key={f.title}
-                className="group relative overflow-hidden rounded-2xl border border-stroke bg-surface/60 p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface"
+                className="group relative overflow-hidden rounded-xl sm:rounded-2xl border border-stroke bg-surface/60 p-5 sm:p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface"
               >
                 <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-accent/10 opacity-0 blur-2xl transition duration-300 group-hover:opacity-100" />
-                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-stroke bg-surface-high text-accent-soft">
-                  <Icon className="h-5 w-5" />
+                <span className="relative flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-stroke bg-surface-high text-accent-soft">
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
-                <h3 className="relative mt-5 text-lg font-semibold tracking-tight">{f.title}</h3>
-                <p className="relative mt-2.5 text-sm leading-relaxed text-text-secondary">
+                <h3 className="relative mt-4 sm:mt-5 text-base sm:text-lg font-semibold tracking-tight">{f.title}</h3>
+                <p className="relative mt-2 text-xs sm:text-sm leading-relaxed text-text-secondary">
                   {f.body}
                 </p>
               </article>
@@ -437,35 +435,35 @@ function Notifications() {
   ];
 
   return (
-    <section className="py-24 sm:py-32">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
+    <section className="py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto grid max-w-6xl items-center gap-10 sm:gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
             Reminders
           </p>
-          <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 sm:mt-4 text-balance text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
             The plan reminds you. Not an algorithm.
           </h2>
-          <p className="mt-5 leading-relaxed text-text-secondary">
+          <p className="mt-3 sm:mt-5 text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
             Notifications exist to get you out the door on time - nothing else. No
             re-engagement pings, no &ldquo;someone you may know&rdquo; at 11pm.
           </p>
 
-          <ul className="mt-8 flex flex-col gap-4">
+          <ul className="mt-6 sm:mt-8 flex flex-col gap-3 sm:gap-4">
             {points.map((item) => (
-              <li key={item} className="flex gap-3">
+              <li key={item} className="flex gap-2.5 sm:gap-3">
                 <span className="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-success/15 text-success">
                   <CheckIcon className="h-3.5 w-3.5" strokeWidth={2.2} />
                 </span>
-                <span className="text-sm leading-relaxed text-text-secondary">{item}</span>
+                <span className="text-xs sm:text-sm leading-relaxed text-text-secondary">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="flex justify-center">
-          <div className="relative w-full max-w-[17rem]">
-            <div className="pointer-events-none absolute -inset-10 rounded-full bg-accent/10 blur-3xl" />
+          <div className="relative w-full max-w-[14.5rem] sm:max-w-[17rem]">
+            <div className="pointer-events-none absolute -inset-6 sm:-inset-10 rounded-full bg-accent/10 blur-2xl sm:blur-3xl" />
             <PhoneShot
               src="/screenshots/notifications.png"
               label="Notifications and inbox"
@@ -483,41 +481,41 @@ function PrivacyFirst() {
   return (
     <section
       id="privacy-first"
-      className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-24 sm:py-32"
+      className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-16 sm:py-24 lg:py-32"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Privacy by design"
           title="Meeting strangers should feel safe, not exposing."
           body="Plans runs on the smallest amount of data that makes a meet-up work - and all of it is written down in plain language."
         />
 
-        <div className="mt-14 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 sm:mt-14 grid gap-3.5 sm:gap-4 md:grid-cols-3">
           {privacyPoints.map((p) => {
             const Icon = p.icon;
             return (
-              <div key={p.title} className="rounded-2xl border border-stroke bg-surface/60 p-6">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-stroke bg-surface-high text-accent-soft">
-                  <Icon className="h-5 w-5" />
+              <div key={p.title} className="rounded-xl sm:rounded-2xl border border-stroke bg-surface/60 p-5 sm:p-6">
+                <span className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl border border-stroke bg-surface-high text-accent-soft">
+                  <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold tracking-tight">{p.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-text-secondary">{p.body}</p>
+                <h3 className="mt-4 sm:mt-5 text-base sm:text-lg font-semibold tracking-tight">{p.title}</h3>
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-text-secondary">{p.body}</p>
               </div>
             );
           })}
         </div>
 
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-7 sm:mt-8 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row">
           <Link
             href="/privacy"
-            className="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface px-5 py-3 text-sm text-text-primary transition hover:border-accent/50"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-stroke bg-surface px-5 py-3 text-xs sm:text-sm text-text-primary transition hover:border-accent/50"
           >
             Read the Privacy Policy
             <ArrowRightIcon className="h-4 w-4" />
           </Link>
           <Link
             href="/terms"
-            className="inline-flex items-center gap-2 rounded-full border border-stroke bg-surface px-5 py-3 text-sm text-text-primary transition hover:border-accent/50"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-stroke bg-surface px-5 py-3 text-xs sm:text-sm text-text-primary transition hover:border-accent/50"
           >
             Read the Terms
             <ArrowRightIcon className="h-4 w-4" />
@@ -530,19 +528,19 @@ function PrivacyFirst() {
 
 function Faq() {
   return (
-    <section id="faq" className="scroll-mt-24 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl px-5 sm:px-8">
+    <section id="faq" className="scroll-mt-24 py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="FAQ" title="Questions people actually ask." />
 
-        <div className="mt-12 divide-y divide-stroke border-y border-stroke">
+        <div className="mt-10 sm:mt-12 divide-y divide-stroke border-y border-stroke">
           {faqs.map((faq) => (
-            <details key={faq.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-[15px] font-medium text-text-primary">
+            <details key={faq.q} className="group py-4 sm:py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 sm:gap-6 text-left text-sm sm:text-[15px] font-medium text-text-primary">
                 {faq.q}
-                <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border border-stroke text-text-secondary transition group-open:rotate-45 group-open:border-accent/50 group-open:text-accent-soft">
+                <span className="flex h-6 w-6 sm:h-7 sm:w-7 flex-none items-center justify-center rounded-full border border-stroke text-text-secondary transition group-open:rotate-45 group-open:border-accent/50 group-open:text-accent-soft">
                   <svg
                     viewBox="0 0 24 24"
-                    className="h-3.5 w-3.5"
+                    className="h-3 w-3 sm:h-3.5 sm:w-3.5"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -553,7 +551,7 @@ function Faq() {
                   </svg>
                 </span>
               </summary>
-              <p className="mt-3 max-w-2xl pr-10 text-sm leading-relaxed text-text-secondary">
+              <p className="mt-2.5 sm:mt-3 max-w-2xl pr-4 sm:pr-10 text-xs sm:text-sm leading-relaxed text-text-secondary">
                 {faq.a}
               </p>
             </details>
@@ -571,8 +569,8 @@ function Download() {
   ];
 
   return (
-    <section id="download" className="scroll-mt-24 px-5 pb-24 sm:px-8 sm:pb-32">
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-stroke bg-[linear-gradient(140deg,#24153a_0%,#140b24_50%,#2e1b48_100%)] px-6 py-16 text-center sm:px-14">
+    <section id="download" className="scroll-mt-24 px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8 lg:pb-32">
+      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] border border-stroke bg-[linear-gradient(140deg,#24153a_0%,#140b24_50%,#2e1b48_100%)] px-4 py-10 sm:px-14 sm:py-16 text-center">
         <div className="pointer-events-none absolute inset-0 grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000,transparent_75%)]" />
         <div className="pointer-events-none absolute left-1/2 top-[-8rem] h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent/25 blur-[110px]" />
 
@@ -580,14 +578,14 @@ function Download() {
           <Image
             src="/app-icon.png"
             alt=""
-            width={72}
-            height={72}
-            className="mx-auto mb-6 h-18 w-18 rounded-[1.25rem] shadow-[0_18px_40px_-16px_var(--color-accent)]"
+            width={64}
+            height={64}
+            className="mx-auto mb-4 sm:mb-6 h-14 w-14 sm:h-18 sm:w-18 rounded-[1rem] sm:rounded-[1.25rem] shadow-[0_18px_40px_-16px_var(--color-accent)]"
           />
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="text-balance text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
             Your next free evening is already there.
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-pretty leading-relaxed text-text-secondary">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-lg text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
             Join the beta list and the invite arrives the day {site.name} opens in your
             city. Or skip the wait entirely - {site.name} already runs in your browser.
           </p>
@@ -596,7 +594,7 @@ function Download() {
             href={site.webAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft"
+            className="group mt-5 sm:mt-6 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft"
           >
             <BrowserIcon className="h-4 w-4" />
             Open {site.name} in your browser
@@ -605,7 +603,7 @@ function Download() {
 
           {/* Swap `action` for your real signup endpoint when one exists. */}
           <form
-            className="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row"
+            className="mx-auto mt-6 sm:mt-8 flex max-w-md flex-col gap-2.5 sm:gap-3 sm:flex-row"
             action={"mailto:" + site.supportEmail}
             method="post"
             encType="text/plain"
@@ -620,34 +618,34 @@ function Download() {
               required
               autoComplete="email"
               placeholder="you@example.com"
-              className="h-12 flex-1 rounded-full border border-stroke bg-ink/80 px-5 text-sm text-text-primary placeholder:text-text-tertiary focus:border-accent/60 focus:outline-none"
+              className="h-11 sm:h-12 flex-1 rounded-full border border-stroke bg-ink/80 px-4 sm:px-5 text-xs sm:text-sm text-text-primary placeholder:text-text-tertiary focus:border-accent/60 focus:outline-none"
             />
             <button
               type="submit"
-              className="h-12 rounded-full bg-accent px-6 text-sm font-medium text-white transition hover:bg-accent-soft"
+              className="h-11 sm:h-12 rounded-full bg-accent px-5 sm:px-6 text-xs sm:text-sm font-medium text-white transition hover:bg-accent-soft"
             >
               Request an invite
             </button>
           </form>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row">
             {stores.map(({ Icon, top, bottom }) => (
               <span
                 key={bottom}
-                className="inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-stroke bg-surface/70 px-5 py-3 text-left sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left sm:w-auto"
               >
-                <Icon className="h-6 w-6 text-text-primary" />
+                <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
                 <span className="leading-tight">
-                  <span className="block text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+                  <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
                     {top}
                   </span>
-                  <span className="block text-sm font-medium text-text-primary">{bottom}</span>
+                  <span className="block text-xs sm:text-sm font-medium text-text-primary">{bottom}</span>
                 </span>
               </span>
             ))}
           </div>
 
-          <p className="mt-6 text-xs text-text-tertiary">
+          <p className="mt-5 sm:mt-6 text-[11px] sm:text-xs text-text-tertiary">
             We only use your email for the beta invite. See the{" "}
             <Link
               href="/privacy"

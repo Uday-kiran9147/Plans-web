@@ -34,18 +34,18 @@ export function LegalPage({
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] grid-bg opacity-40 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000,transparent_75%)]" />
       <div className="pointer-events-none absolute left-1/2 top-[-12rem] h-[24rem] w-[40rem] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-6xl px-5 pt-32 pb-24 sm:px-8 sm:pt-40">
+      <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-16 sm:px-6 sm:pt-32 sm:pb-24 lg:px-8 lg:pt-40">
         <header className="mx-auto max-w-3xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
             {kind}
           </p>
-          <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-3 sm:mt-4 text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             {title}
           </h1>
-          <p className="mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-text-secondary">
+          <p className="mx-auto mt-4 sm:mt-5 max-w-xl text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
             {intro}
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs text-text-tertiary">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center gap-2 text-[11px] sm:text-xs text-text-tertiary">
             <span className="rounded-full border border-stroke bg-surface px-3 py-1.5">
               Effective {site.effectiveDate}
             </span>
@@ -55,7 +55,7 @@ export function LegalPage({
           </div>
         </header>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-[16rem_1fr] lg:gap-16">
+        <div className="mt-10 sm:mt-16 grid gap-8 sm:gap-12 lg:grid-cols-[16rem_1fr] lg:gap-16">
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-tertiary">
               On this page

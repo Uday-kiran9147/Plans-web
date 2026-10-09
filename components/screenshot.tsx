@@ -65,20 +65,20 @@ export function PhoneShot({
 }: ShotProps) {
   return (
     <div
-      className={`relative aspect-[9/20] w-full max-w-[17rem] rounded-[2.5rem] border border-stroke bg-surface p-2 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)] ${className}`}
+      className={`relative aspect-[9/20] w-full max-w-[14.5rem] sm:max-w-[17rem] rounded-[2rem] sm:rounded-[2.5rem] border border-stroke bg-surface p-1.5 sm:p-2 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.8)] sm:shadow-[0_40px_90px_-30px_rgba(0,0,0,0.9)] ${className}`}
     >
       {/* Real captures ship with their own status bar, so the fake notch only
           belongs on the placeholder. */}
       {src ? null : (
-        <div className="absolute left-1/2 top-3.5 z-10 h-5 w-20 -translate-x-1/2 rounded-full bg-ink" />
+        <div className="absolute left-1/2 top-3 z-10 h-4 w-16 sm:top-3.5 sm:h-5 sm:w-20 -translate-x-1/2 rounded-full bg-ink" />
       )}
-      <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-ink-soft">
+      <div className="relative h-full w-full overflow-hidden rounded-[1.65rem] sm:rounded-[2rem] bg-ink-soft">
         {src ? (
           <Image
             src={src}
             alt={label}
             fill
-            sizes="(max-width: 768px) 70vw, 272px"
+            sizes="(max-width: 640px) 230px, (max-width: 768px) 70vw, 272px"
             className="object-cover"
             priority={priority}
           />

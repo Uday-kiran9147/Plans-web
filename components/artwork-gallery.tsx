@@ -38,8 +38,8 @@ const artworks = [
 
 export function ArtworkGallery() {
   return (
-    <section id="artwork" className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+    <section id="artwork" className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-16 sm:py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
             Art Direction
@@ -47,27 +47,27 @@ export function ArtworkGallery() {
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
             The Trifecta of Living Well
           </h2>
-          <p className="mt-4 text-pretty leading-relaxed text-text-secondary">
+          <p className="mt-4 text-pretty leading-relaxed text-text-secondary text-sm sm:text-base">
             Hand-cut paper silhouettes, expressive adult characters, confident plum ink, and tactile risograph texture.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-14 grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {artworks.map((art) => (
             <article
               key={art.title}
-              className="group relative flex flex-col rounded-[2.2rem] border-3 border-plum-ink bg-cream p-7 text-plum-ink shadow-[0_12px_0px_#302547,0_20px_30px_rgba(48,37,71,0.25)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_18px_0px_#302547,0_28px_40px_rgba(48,37,71,0.35)] sm:p-8"
+              className="group relative flex flex-col rounded-[1.75rem] sm:rounded-[2.2rem] border-3 border-plum-ink bg-cream p-5 sm:p-7 md:p-8 text-plum-ink shadow-[0_10px_0px_#302547,0_16px_25px_rgba(48,37,71,0.2)] sm:shadow-[0_12px_0px_#302547,0_20px_30px_rgba(48,37,71,0.25)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_16px_0px_#302547,0_24px_35px_rgba(48,37,71,0.3)]"
             >
-              <div className="font-mono text-[11px] font-extrabold uppercase tracking-wider text-burnt-orange">
+              <div className="font-mono text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-burnt-orange">
                 <span>{art.pillar}</span> • <span>{art.sub}</span>
               </div>
 
-              <h3 className="mt-2 text-2xl font-bold uppercase tracking-tight text-plum-ink">
+              <h3 className="mt-1.5 sm:mt-2 text-xl sm:text-2xl font-bold uppercase tracking-tight text-plum-ink">
                 {art.title}
               </h3>
 
               {/* Artwork Box */}
-              <div className="relative mt-5 flex h-60 w-full items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-plum-ink/25 bg-cream-light p-4 transition-colors group-hover:bg-[#FFF5DE]">
+              <div className="relative mt-4 sm:mt-5 flex h-48 sm:h-56 md:h-60 w-full items-center justify-center overflow-hidden rounded-xl sm:rounded-2xl border-2 border-dashed border-plum-ink/25 bg-cream-light p-3 sm:p-4 transition-colors group-hover:bg-[#FFF5DE]">
                 <div className="relative h-full w-full">
                   <Image
                     src={art.img}
@@ -79,11 +79,11 @@ export function ArtworkGallery() {
                 </div>
               </div>
 
-              <p className="mt-5 flex-1 text-sm leading-relaxed text-plum-ink/85">
+              <p className="mt-4 sm:mt-5 flex-1 text-xs sm:text-sm leading-relaxed text-plum-ink/85">
                 {art.desc}
               </p>
 
-              <div className="mt-6 flex items-center justify-between border-t-2 border-dashed border-plum-ink/20 pt-4 font-mono text-[11px] font-extrabold text-plum-ink">
+              <div className="mt-5 sm:mt-6 flex items-center justify-between border-t-2 border-dashed border-plum-ink/20 pt-3.5 sm:pt-4 font-mono text-[10px] sm:text-[11px] font-extrabold text-plum-ink">
                 <span>ASSET: {art.footerAsset}</span>
                 <span className={art.statusColor}>{art.footerStatus}</span>
               </div>

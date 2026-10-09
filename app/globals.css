@@ -65,16 +65,19 @@
 @layer base {
   * {
     border-color: var(--color-stroke);
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
-    /* Decorative blurs sit outside the layout box; clip (not hidden) so
-       position: sticky keeps working in the legal-page sidebar. */
-    overflow-x: clip;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
     background-color: var(--color-ink);
     color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;

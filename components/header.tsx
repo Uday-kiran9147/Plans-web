@@ -63,14 +63,14 @@ export function Header() {
       </div>
 
       {open ? (
-        <div className="border-t border-stroke/70 px-5 pb-5 pt-3 md:hidden">
-          <nav className="flex flex-col">
+        <div className="border-t border-stroke/70 bg-ink/95 backdrop-blur-2xl px-5 pb-6 pt-3 md:hidden shadow-2xl">
+          <nav className="flex flex-col gap-1">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-3 py-3 text-sm text-text-secondary transition hover:bg-surface hover:text-text-primary"
+                className="rounded-xl px-3.5 py-2.5 text-sm font-semibold text-text-secondary transition hover:bg-surface hover:text-cream active:bg-surface"
               >
                 {item.label}
               </Link>
@@ -78,7 +78,7 @@ export function Header() {
             <Link
               href="/#download"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-xl bg-accent px-4 py-3 text-center text-sm font-medium text-white"
+              className="mt-3 rounded-xl border-2 border-plum-ink bg-orange px-4 py-3 text-center text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] active:translate-y-0.5"
             >
               Get the app
             </Link>
