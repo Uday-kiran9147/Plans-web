@@ -40,22 +40,23 @@ export default async function Image() {
         />
 
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 18,
-              background: "#6A00F4",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 34,
-              fontWeight: 700,
-              color: "#FFF0C8",
-            }}
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 100 100"
+            fill="none"
           >
-            P
-          </div>
+            <rect width="100" height="100" rx="28" fill="#6A00F4" />
+            <g stroke="#FFF0C8" strokeWidth="8" strokeLinecap="round">
+              <path d="M28 68V52Q28 42 38 42H42" />
+              <path d="M72 32V48Q72 58 62 58H58" />
+            </g>
+            <g fill="#FFF0C8">
+              <circle cx="28" cy="27" r="6" />
+              <circle cx="72" cy="73" r="6" />
+              <circle cx="50" cy="50" r="6" />
+            </g>
+          </svg>
           <div style={{ fontSize: 34, fontWeight: 600, color: "#FFF0C8" }}>{site.name}</div>
         </div>
 
