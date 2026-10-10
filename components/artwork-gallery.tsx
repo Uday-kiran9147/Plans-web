@@ -7,8 +7,8 @@ const artworks = [
     title: "GET TOGETHER",
     img: "/brand/meetup.png",
     alt: "Three friends meeting at a cafe table with racket",
-    desc: "Real eye contact, unhurried afternoon banter, and spontaneous plans. A table for three where nobody is scrolling.",
-    footerAsset: "MEETUP.PNG",
+    desc: "Real eye contact, unhurried conversations, and spontaneous plans. A table where nobody is looking down at a screen.",
+    footerAsset: "REAL PRESENCE",
     footerStatus: "CONFIRMED 6:00 PM",
     statusColor: "text-burnt-orange",
   },
@@ -18,20 +18,20 @@ const artworks = [
     title: "MAKE IT HAPPEN",
     img: "/brand/activities.png",
     alt: "Coffee, board games and badminton tools",
-    desc: "Espresso, dice, shuttlecocks, tennis rackets. The tactile tools of a well-spent weekend. One line of intent turns into real games.",
-    footerAsset: "ACTIVITIES.PNG",
-    footerStatus: "ZERO IDLE MINUTES",
+    desc: "Espresso, board games, shuttlecocks, tennis courts. One line of intent turns vague 'we should hang out' into actual weekend activities.",
+    footerAsset: "DOING OVER TALKING",
+    footerStatus: "ZERO IDLE CHATS",
     statusColor: "text-accent",
   },
   {
     pillar: "PILLAR 03",
-    sub: "EVIDENCE",
+    sub: "MEMORIES",
     title: "KEEP THE GOOD DAYS",
     img: "/brand/memories.png",
     alt: "Friends in keepsake photo cards and tickets",
-    desc: "Photo keepsakes and location passes. Your feed is not a public broadcast; it is an undeniable vault of things you actually did.",
-    footerAsset: "MEMORIES.PNG",
-    footerStatus: "PERMANENT VALUE",
+    desc: "Photo keepsakes and shared moments. Your feed is not a public broadcast for algorithm likes - it is an authentic vault of things you actually did.",
+    footerAsset: "REAL KEEPSAKES",
+    footerStatus: "PROOF YOU WENT",
     statusColor: "text-burnt-orange",
   },
 ];
@@ -42,13 +42,13 @@ export function ArtworkGallery() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
-            Art Direction
+            Our Philosophy
           </p>
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
             The Trifecta of Living Well
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-text-secondary text-sm sm:text-base">
-            Hand-cut paper silhouettes, expressive adult characters, confident plum ink, and tactile risograph texture.
+            Real connection isn&apos;t built behind a screen. It thrives on three simple habits: showing up in person, doing what you love, and keeping the moments that matter.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export function ArtworkGallery() {
               </p>
 
               <div className="mt-5 sm:mt-6 flex items-center justify-between border-t-2 border-dashed border-plum-ink/20 pt-3.5 sm:pt-4 font-mono text-[10px] sm:text-[11px] font-extrabold text-plum-ink">
-                <span>ASSET: {art.footerAsset}</span>
+                <span>MODE: {art.footerAsset}</span>
                 <span className={art.statusColor}>{art.footerStatus}</span>
               </div>
             </article>

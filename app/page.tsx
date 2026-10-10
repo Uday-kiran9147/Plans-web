@@ -200,10 +200,10 @@ export default function Home() {
       <PlanPassStudio />
       <ArtworkGallery />
       <HowItWorks />
-      <InteractiveSimulator />
-      <Features />
+      {/* <InteractiveSimulator /> */}
+      {/* <Features /> */}
       <Notifications />
-      <PrivacyFirst />
+      {/* <PrivacyFirst /> */}
       <Faq />
       <Download />
     </>
@@ -600,33 +600,6 @@ function Download() {
             Open {site.name} in your browser
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-
-          {/* Swap `action` for your real signup endpoint when one exists. */}
-          <form
-            className="mx-auto mt-6 sm:mt-8 flex max-w-md flex-col gap-2.5 sm:gap-3 sm:flex-row"
-            action={"mailto:" + site.supportEmail}
-            method="post"
-            encType="text/plain"
-          >
-            <label htmlFor="email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              autoComplete="email"
-              placeholder="you@example.com"
-              className="h-11 sm:h-12 flex-1 rounded-full border border-stroke bg-ink/80 px-4 sm:px-5 text-xs sm:text-sm text-text-primary placeholder:text-text-tertiary focus:border-accent/60 focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="h-11 sm:h-12 rounded-full bg-accent px-5 sm:px-6 text-xs sm:text-sm font-medium text-white transition hover:bg-accent-soft"
-            >
-              Request an invite
-            </button>
-          </form>
 
           <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row">
             {stores.map(({ Icon, top, bottom }) => (
