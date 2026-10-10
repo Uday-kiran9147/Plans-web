@@ -156,13 +156,16 @@ export function AppleIcon(props: IconProps) {
   );
 }
 
-export function AndroidIcon(props: IconProps) {
+export function GooglePlayIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
-      <path d="m17.2 9.3.1-.2 1.5-2.6a.35.35 0 0 0-.6-.35l-1.5 2.63A9.3 9.3 0 0 0 12 7.75c-1.7 0-3.3.37-4.7 1.03L5.8 6.15a.35.35 0 1 0-.6.35l1.5 2.6.1.2A6.5 6.5 0 0 0 3.2 14.8h17.6a6.5 6.5 0 0 0-3.6-5.5zM8.1 12.7a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zm7.8 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6zM3.4 16v4.4a1.3 1.3 0 0 0 2.6 0V16H3.4zm14.6 0v4.4a1.3 1.3 0 0 0 2.6 0V16H18zM7.1 16v5.4a1.35 1.35 0 0 0 1.35 1.35h.35v2.1h-.03V16H7.1zm9.8 0h-1.67v8.85h-.03v-2.1h.35A1.35 1.35 0 0 0 16.9 21.4V16z" />
+      <path d="M22.018 13.298l-3.966 2.288-3.686-3.686 3.686-3.686 3.966 2.288c.552.318.552 1.478 0 1.796zm-5.467-5.17L4.475.297C4.162.118 3.81.043 3.473.088l11.078 11.04 2-3zM3.473 23.912c.337.045.689-.03 1.002-.209l12.076-7.831-2-3-11.078 11.04zm-.973-1.742c-.313-.362-.5-.86-.5-1.42V3.25c0-.56.187-1.058.5-1.42L13.565 12 2.5 22.17z" />
     </svg>
   );
 }
+
+export const PlayStoreIcon = GooglePlayIcon;
+export const AndroidIcon = GooglePlayIcon;
 
 export function BrowserIcon(props: IconProps) {
   return (

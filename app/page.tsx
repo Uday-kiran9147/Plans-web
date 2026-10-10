@@ -7,7 +7,6 @@ import { ArtworkGallery } from "@/components/artwork-gallery";
 import { InteractiveSimulator } from "@/components/interactive-simulator";
 import { HeroStage } from "@/components/hero-stage";
 import {
-  AndroidIcon,
   AppleIcon,
   ArrowRightIcon,
   BellIcon,
@@ -18,6 +17,7 @@ import {
   CheckIcon,
   ClockIcon,
   CompassIcon,
+  GooglePlayIcon,
   LockIcon,
   PeopleIcon,
   PinIcon,
@@ -565,7 +565,7 @@ function Faq() {
 function Download() {
   const stores = [
     { Icon: AppleIcon, top: "Coming soon to", bottom: "the App Store" },
-    { Icon: AndroidIcon, top: "Coming soon to", bottom: "Google Play" },
+    { Icon: GooglePlayIcon, top: "Coming soon to", bottom: "Google Play" },
   ];
 
   return (
