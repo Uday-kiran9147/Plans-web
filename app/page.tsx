@@ -6,6 +6,7 @@ import { PlanPassStudio } from "@/components/plan-pass-studio";
 import { ArtworkGallery } from "@/components/artwork-gallery";
 import { InteractiveSimulator } from "@/components/interactive-simulator";
 import { HeroStage } from "@/components/hero-stage";
+import { VideoWalkthrough } from "@/components/video-walkthrough";
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -248,10 +249,10 @@ function Hero() {
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
-                href="#pass-studio"
+                href="#watch"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
               >
-                Create a pass
+                Watch the film
               </Link>
             </div>
 
@@ -266,28 +267,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Screenshots Showcase Row */}
-        <div className="relative mt-12 sm:mt-20 flex items-end justify-center gap-3 sm:gap-8">
-          <PhoneShot
-            src="/screenshots/discover.png"
-            label="Discover"
-            caption="People and plans near you."
-            className="hidden w-[12rem] translate-y-8 -rotate-6 opacity-90 md:block"
-          />
-          <PhoneShot
-            src="/screenshots/home.png"
-            label="Home"
-            caption="Everything you said yes to."
-            className="z-10 animate-float w-full max-w-[15rem] sm:max-w-[17rem]"
-            priority
-          />
-          <PhoneShot
-            src="/screenshots/plan-chat.png"
-            label="Plan chat"
-            caption="Sort the details, then meet."
-            className="hidden w-[12rem] translate-y-8 rotate-6 opacity-90 md:block"
-          />
-        </div>
+        <VideoWalkthrough />
       </div>
     </section>
   );

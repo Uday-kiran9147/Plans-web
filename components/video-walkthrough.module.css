@@ -1,0 +1,74 @@
+.room { position: relative; margin-top: 5rem; border: 1px solid #65507e; border-radius: 28px; background: radial-gradient(ellipse at 85% 40%, #472068 0%, transparent 55%), #211333; overflow: hidden; scroll-margin-top: 6rem; }
+.topline { display: flex; justify-content: space-between; gap: 1rem; padding: 18px 30px; border-bottom: 1px solid #65507e; font: 10px ui-monospace, monospace; letter-spacing: .14em; color: #d8c8e9; }
+.layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; padding: 48px; align-items: center; }
+.ticket { display: inline-block; padding: 7px 11px; background: #ff9b50; color: #302547; transform: rotate(-3deg); font: bold 9px ui-monospace, monospace; letter-spacing: .08em; }
+.story h2 { margin: 24px 0 18px; font-size: clamp(2.5rem, 4vw, 3.8rem); line-height: 1.05; letter-spacing: -.05em; font-weight: 650; }
+.story h2 em { color: #ff9b50; font-style: normal; }
+.story > p { max-width: 350px; color: #c9bed9; font-size: 14px; line-height: 1.75; }
+.watchButton { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 24px 0 32px; width: 100%; max-width: 350px; padding: 15px 20px; border-radius: 14px; background: #fff0c8; color: #302547; text-align: left; font-size: 15px; font-weight: 750; box-shadow: 0 5px 0 #ff9b50; cursor: pointer; transition: transform .2s; }
+.watchButton:hover { transform: translateY(-3px); }
+.watchButton svg { width: 26px; height: 26px; }
+.watchButton > span:first-of-type { flex: 1; }
+.watchButton small { display: block; font-size: 10px; font-weight: 500; margin-top: 3px; }
+.chapterHeading { display: flex; justify-content: space-between; font: 9px ui-monospace, monospace; letter-spacing: .14em; color: #c9bed9; margin-bottom: 8px; }
+.chapters { list-style: none; padding: 0; }
+.chapters button { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 0; border-top: 1px solid #453468; text-align: left; cursor: pointer; font-size: 13px; transition: color .2s, padding .2s; }
+.chapters button:hover { color: #ff9b50; padding-left: 6px; }
+.number { color: #ff9b50; font: 10px ui-monospace, monospace; }
+.chapters small { display: block; margin-top: 3px; color: #b8a8cc; font-size: 10px; }
+.stamp { margin-left: auto; white-space: nowrap; font: 10px ui-monospace, monospace; color: #c9bed9; }
+.stamp span { margin-left: 8px; color: #ff9b50; }
+.stage { position: relative; min-width: 0; display: flex; align-items: center; flex-direction: column; }
+.orbit { position: absolute; inset: 15% -10%; border: 1px solid #8b4df75c; border-radius: 50%; transform: rotate(-25deg); pointer-events: none; }
+.orbit::after { content: ""; position: absolute; inset: 30px -25px; border: inherit; border-radius: inherit; }
+.film { position: relative; width: 100%; max-width: 310px; border: 6px solid #fff0c8; border-radius: 16px; overflow: hidden; background: #fff0c8; box-shadow: 12px 14px 0 #11091e66; transform: rotate(2deg); }
+.filmHeader, .filmFooter { display: flex; align-items: center; gap: 6px; color: #302547; padding: 9px 6px 12px; font: bold 8px ui-monospace, monospace; letter-spacing: .02em; }
+.filmHeader > span:last-child { margin-left: auto; }
+.dot { width: 6px; height: 6px; background: #6a00f4; border-radius: 50%; }
+.posterButton { position: relative; display: block; width: 100%; cursor: pointer; border-radius: 6px; overflow: hidden; }
+.posterButton video { display: block; width: 100%; height: auto; aspect-ratio: 9/16; object-fit: contain; background: #6a00f4; }
+.playBadge { position: absolute; left: 50%; bottom: 17px; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; white-space: nowrap; background: #fff0c8; color: #302547; border: 2px solid #302547; box-shadow: 0 3px 0 #302547; padding: 10px 16px; border-radius: 30px; font-size: 12px; font-weight: 750; }
+.playBadge svg { width: 17px; height: 17px; }
+.filmFooter { justify-content: space-between; padding: 13px 5px 6px; letter-spacing: 0; }
+.filmFooter button { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; min-height: 24px; }
+.sticker { position: absolute; z-index: 2; right: -16px; top: -25px; display: grid; place-content: center; width: 94px; height: 94px; background: #ff9b50; color: #302547; clip-path: polygon(50% 0,61% 12%,78% 5%,81% 24%,98% 27%,91% 45%,100% 58%,83% 67%,83% 86%,64% 85%,51% 100%,40% 87%,21% 94%,18% 74%,1% 69%,10% 51%,0 38%,18% 28%,19% 10%,38% 14%); transform: rotate(12deg); font-size: 12px; font-weight: 900; line-height: 1.1; text-align: center; }
+.caption { position: relative; margin-top: 26px; font-size: 11px; color: #d8c8e9; }
+.caption span { margin-left: 8px; color: #ff9b50; font-size: 20px; vertical-align: middle; }
+.dialog { margin: auto; padding: 0; width: min(920px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); border: 1px solid #65507e; border-radius: 20px; color: #fff0c8; background: #1d1232; overflow: auto; }
+.dialog::backdrop { background: #0c0618ed; backdrop-filter: blur(12px); }
+.cinemaHeader { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 18px 24px; border-bottom: 1px solid #453468; }
+.cinemaHeader span { font: 9px ui-monospace, monospace; letter-spacing: .12em; color: #ff9b50; }
+.cinemaHeader h3 { font-weight: 600; font-size: 16px; margin-top: 6px; }
+.cinemaHeader button { flex: none; width: 44px; height: 44px; border: 1px solid #65507e; border-radius: 50%; cursor: pointer; }
+.cinemaBody { display: grid; grid-template-columns: 1fr 280px; }
+.cinemaBody > video { display: block; width: 100%; height: min(72dvh, 740px); background: #090510; object-fit: contain; }
+.cinemaChapters { display: flex; flex-direction: column; padding: 28px 20px; gap: 8px; }
+.cinemaChapters > p { font: 9px ui-monospace, monospace; color: #c9bed9; margin-bottom: 16px; }
+.cinemaChapters button { display: flex; align-items: center; gap: 14px; padding: 12px; border: 1px solid transparent; text-align: left; border-radius: 10px; font-size: 12px; cursor: pointer; }
+.cinemaChapters button[aria-current="step"] { background: #32234f; border-color: #8b4df7; }
+.cinemaChapters button > span:first-child { color: #ff9b50; font: 10px ui-monospace, monospace; }
+.cinemaChapters small { display: block; margin-top: 5px; color: #c9bed9; }
+.cinemaChapters a { margin-top: auto; padding: 16px 0 0; color: #ff9b50; font-size: 12px; }
+.error { padding: 16px 24px; font-size: 13px; }
+.error a { text-decoration: underline; }
+@media (max-width: 767px) {
+  .room { margin-top: 3rem; border-radius: 20px; }
+  .topline { padding: 16px 20px; font-size: 8px; letter-spacing: .06em; }
+  .topline span:last-child { display: none; }
+  .layout { grid-template-columns: 1fr; padding: 30px 24px; gap: 44px; }
+  .story h2 { font-size: 2.8rem; }
+  .story > p, .watchButton { max-width: none; }
+  .stage { width: min(100%, 310px); margin: 0 auto; }
+  .sticker { right: -14px; width: 80px; height: 80px; font-size: 10px; }
+  .cinemaHeader { padding: 12px; }
+  .cinemaHeader h3 { font-size: 13px; }
+  .cinemaBody { grid-template-columns: 1fr; }
+  .cinemaBody > video { height: 62dvh; }
+  .cinemaChapters { flex-direction: row; overflow-x: auto; padding: 12px; }
+  .cinemaChapters > p { display: none; }
+  .cinemaChapters button { flex: 0 0 155px; padding: 8px; }
+  .cinemaChapters a { flex: 0 0 130px; margin: auto 0; padding: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .watchButton, .chapters button { transition: none; }
+}

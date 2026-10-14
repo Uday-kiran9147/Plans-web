@@ -65,3 +65,18 @@ The small `LogoMark` in the header and footer is a drawn "P" mark, not the app
 icon - the real icon has the word "Plans" in it, which turns to mush at 32px and
 duplicates the wordmark beside it. The real icon is used where it has room: the
 favicon, the web manifest and the download CTA.
+
+## Walkthrough film
+
+The home page screening room (`components/video-walkthrough.tsx`) uses the
+portrait walkthrough in `public/video/`. The 12-second, audio-free preview is
+loaded only when visible; reduced motion, data saving, slow connections, hidden
+tabs and the pause button prevent automatic playback. The full 1:43 film loads
+on a watch/chapter click and plays with sound in a native modal dialog with
+standard video controls. Escape closes it and returns keyboard focus.
+
+`plans-walkthrough.mp4` preserves the supplied H.264/AAC video, remuxed with
+fast-start metadata. `plans-preview.mp4` is a 540×960 silent excerpt from 0:25;
+`plans-poster.jpg` is the corresponding still. Chapter seek points are defined
+in the component. Update these derivatives and seek points together when
+replacing the original film.
