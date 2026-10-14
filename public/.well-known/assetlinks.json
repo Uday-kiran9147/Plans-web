@@ -1,12 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": ["delegate_permission/common.handle_all_urls",  "delegate_permission/common.get_login_creds"],
     "target": {
       "namespace": "android_app",
       "package_name": "com.plans.app",
       "sha256_cert_fingerprints": [
         "3F:58:AF:43:B7:F5:50:79:6F:8B:D5:1B:3F:D2:4E:07:D3:EF:2E:27:9E:23:51:A0:A5:FC:94:E4:2E:8F:08:80",
-        "C7:75:3F:29:F3:27:62:41:49:96:F5:62:7F:59:31:5D:A5:AF:8B:59:B8:F4:6F:43:60:1E:AE:F6:7E:07:C1:68"
+        "C7:75:3F:29:F3:27:62:41:49:96:F5:62:7F:59:31:5D:A5:AF:8B:59:B8:F4:6F:43:60:1E:AE:F6:7E:07:C1:68",
+        "5C:8E:3A:68:F8:0A:46:F8:1D:0C:C9:F0:14:F4:D1:AE:78:43:05:EE:14:CF:55:A6:82:F5:D8:A8:80:EE:F2:BB",
+        "BE:35:38:E7:35:0D:35:44:FE:EC:3E:2A:20:74:F6:12:EA:0B:10:05:BC:B9:1E:13:D1:DA:FF:7A:CA:4E:85:21",
+        "B5:E3:54:78:8A:E9:42:69:79:89:30:C2:4F:64:33:8E:DA:BA:5C:97:C3:B3:C7:DB:12:1A:5C:22:CE:6D:DA:0B"
       ]
     }
   }
