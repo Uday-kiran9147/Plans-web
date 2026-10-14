@@ -10,6 +10,7 @@ const columns = [
       { href: "/#features", label: "Features" },
       { href: "/#privacy-first", label: "Privacy by design" },
       { href: "/#faq", label: "FAQ" },
+      { href: "/feedback", label: "Give feedback" },
     ],
   },
   {

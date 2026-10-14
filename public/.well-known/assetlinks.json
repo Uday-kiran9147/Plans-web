@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.plans.app",
+      "sha256_cert_fingerprints": [
+        "3F:58:AF:43:B7:F5:50:79:6F:8B:D5:1B:3F:D2:4E:07:D3:EF:2E:27:9E:23:51:A0:A5:FC:94:E4:2E:8F:08:80",
+        "C7:75:3F:29:F3:27:62:41:49:96:F5:62:7F:59:31:5D:A5:AF:8B:59:B8:F4:6F:43:60:1E:AE:F6:7E:07:C1:68"
+      ]
+    }
+  }
+]

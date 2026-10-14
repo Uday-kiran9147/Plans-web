@@ -81,3 +81,9 @@ fast-start metadata. `plans-preview.mp4` is a 540×960 silent excerpt from 0:25;
 `plans-poster.jpg` is the corresponding still. Chapter seek points are defined
 in the component. Update these derivatives and seek points together when
 replacing the original film.
+
+## Feedback page and Android App Links
+
+`/feedback` rewrites to `public/feedback-form.html`, the animated feedback design. Signed-in responses go to the same private Firestore `productFeedback` collection as the Flutter app. The form never reports success until Firestore confirms the write. Visitors can sign in with their existing Plans email/password or Google account, or continue in the Flutter web app at `https://joinplansnow.web.app/?feedback=1`.
+
+Before publishing, add `plans.drophouse.club` to Firebase Authentication's authorized domains so Google popup sign-in works on this origin. Deploy `public/.well-known/assetlinks.json` unchanged with the site; Android uses its two release-signing SHA-256 fingerprints to verify `https://plans.drophouse.club/feedback`. After deployment, check that both `/feedback` and `/.well-known/assetlinks.json` return 200 over HTTPS, then install an app build containing the new intent filter. iOS Universal Links are deferred.

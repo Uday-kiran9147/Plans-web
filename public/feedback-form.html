@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feedback · Plans</title>
+<meta name="description" content="Tell us how Plans felt and what you think of the idea. Five quick choices, one optional note.">
+<link rel="canonical" href="https://plans.drophouse.club/feedback">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@500;700&display=swap">
+<style>
+  /* ===== Plans brand tokens ===== */
+  :root {
+    --purple: #6600F2;   /* Plans Purple */
+    --cream:  #FFEFCB;   /* Paper Cream */
+    --plum:   #140B24;   /* Plum Ink */
+    --orange: #FF9A52;   /* Rendezvous Orange */
+    --blue:   #2554DB;   /* Pass Blue */
+    --display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --text: 'DM Sans', system-ui, sans-serif;
+    --spring: cubic-bezier(.3, 1.6, .5, 1);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body { margin: 0; font-family: var(--text); color: var(--plum); background: var(--cream); }
+
+  /* ===== Section ground ===== */
+  #feedback {
+    position: relative; overflow: hidden; background: var(--purple); color: var(--cream);
+    padding: 88px 20px 112px;
+  }
+  #feedback .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+  .route-links { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+  .route-links a { color: var(--cream); font-weight: 700; font-size: 14px; text-underline-offset: 4px; }
+  .route-links a:hover { color: var(--orange); }
+
+  /* decorative brand shapes */
+  .deco { position: absolute; z-index: 0; pointer-events: none; }
+  .d-burst   { width: clamp(170px, 24vw, 300px); left: -60px; bottom: 50px; transform: rotate(-8deg); animation: fb-bob 7s ease-in-out infinite; }
+  .d-checker { width: clamp(100px, 14vw, 170px); right: 18px; top: 56px; animation: fb-bob 9s ease-in-out -3s infinite; }
+  .d-spark1  { width: 44px; left: 7%; top: 120px; animation: fb-twinkle 3s ease-in-out infinite; }
+  .d-spark2  { width: 58px; right: 6%; bottom: 80px; animation: fb-twinkle 3.6s ease-in-out -1s infinite; }
+  @keyframes fb-bob { 50% { translate: 0 -16px; rotate: 4deg; } }
+  @keyframes fb-twinkle { 50% { scale: .7; rotate: 20deg; } }
+  @keyframes fb-spin { to { rotate: 360deg; } }
+
+  /* reveal on scroll */
+  #feedback:not(.in) .reveal { opacity: 0; transform: translateY(30px); }
+  #feedback.in .reveal { animation: fb-rise .75s var(--d, 0s) cubic-bezier(.2, .9, .3, 1.15) both; }
+  @keyframes fb-rise { from { opacity: 0; transform: translateY(30px) scale(.97); } }
+
+  /* ===== Header ===== */
+  .kicker {
+    display: inline-block; background: var(--cream); color: var(--purple); border-radius: 999px;
+    padding: 10px 20px; font-weight: 700; font-size: 14px; letter-spacing: .18em; text-transform: uppercase;
+    transform: rotate(-3deg);
+  }
+  #feedback h2 {
+    margin: 22px 0 14px; font-family: var(--display); font-weight: 800;
+    font-size: clamp(54px, 11vw, 104px); line-height: .92; letter-spacing: -.045em;
+  }
+  #feedback h2 span { color: var(--orange); }
+  .sub { margin: 0; font-weight: 500; font-size: clamp(18px, 3vw, 24px); }
+
+  /* ===== Card ===== */
+  .card {
+    margin-top: 38px; background: var(--cream); color: var(--plum);
+    border: 3px solid var(--plum); border-radius: 40px; box-shadow: 8px 8px 0 var(--plum);
+    padding: clamp(22px, 5vw, 44px);
+  }
+
+  /* ===== Question ===== */
+  .q { padding: 30px 0; }
+  .q:first-child { padding-top: 0; }
+  .q + .q { border-top: 3px dashed rgba(20, 11, 36, .2); }
+  .q-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+  .q-text { min-width: 0; }
+  .q-chip {
+    display: inline-block; background: var(--purple); color: var(--cream); border-radius: 999px;
+    padding: 8px 16px; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase;
+  }
+  .q h3 {
+    margin: 14px 0 8px; font-family: var(--display); font-weight: 800;
+    font-size: clamp(27px, 5.2vw, 40px); line-height: 1; letter-spacing: -.03em;
+  }
+  .hint { margin: 0; font-weight: 500; font-size: 17px; opacity: .75; }
+  .mood { margin-top: 16px; min-height: 46px; }
+  .chip {
+    display: inline-block; border: 3px solid var(--plum); border-radius: 999px; padding: 8px 20px;
+    background: var(--c); color: var(--ink); font-weight: 700; font-size: 18px;
+    animation: fb-chip .4s var(--spring);
+  }
+  .chip.idle { background: transparent; color: var(--plum); border-style: dashed; opacity: .7; animation: none; }
+  @keyframes fb-chip { from { opacity: 0; scale: .6; translate: 0 10px; } }
+
+  /* hero face on a starburst */
+  .hero { flex: 0 0 auto; width: clamp(104px, 27vw, 156px); aspect-ratio: 1; filter: drop-shadow(4px 4px 0 var(--plum)); }
+  .hero svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  .hero.pop   { animation: fb-hero-pop .65s var(--spring); }
+  .hero.shake { animation: fb-hero-shake .55s; }
+  @keyframes fb-hero-pop { 0% { scale: .75; rotate: -14deg; } 55% { scale: 1.16; rotate: 6deg; } 100% { scale: 1; rotate: 0deg; } }
+  @keyframes fb-hero-shake { 20% { translate: -7px 0; rotate: -5deg; } 40% { translate: 7px 0; rotate: 5deg; } 60% { translate: -5px 0; } 80% { translate: 3px 0; } }
+  .hero-svg .burst { stroke-width: 5; transform-box: fill-box; transform-origin: center; animation: fb-spin 26s linear infinite; }
+  .hero-svg.idle .burst { stroke-dasharray: 11 9; }
+
+  /* face parts (shared by hero + tiles) */
+  svg .bg   { fill: var(--bg-cur); stroke: var(--plum); stroke-width: 7; transition: fill .25s; }
+  svg .ink-s { fill: none; stroke: var(--ink-cur); stroke-linecap: round; transition: stroke .25s; }
+  svg .ink-f { fill: var(--ink-cur); transition: fill .25s; }
+  .eyes { transform-box: fill-box; transform-origin: center; animation: fb-blink 4.6s infinite; }
+  @keyframes fb-blink { 0%, 93%, 100% { scale: 1 1; } 96% { scale: 1 .1; } }
+  .tear-drop { animation: fb-drip 2.2s ease-in infinite; }
+  @keyframes fb-drip { 0% { translate: 0 -4px; opacity: 0; } 20% { opacity: 1; } 100% { translate: 0 30px; opacity: 0; } }
+  .spark-shape { transform-box: fill-box; transform-origin: center; animation: fb-twinkle 1.6s ease-in-out infinite; }
+
+  /* ===== The five choices ===== */
+  .scale { display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(8px, 2vw, 14px); margin-top: 24px; }
+  .opt { display: block; position: relative; cursor: pointer; }
+  .opt input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: pointer; }
+  .tile {
+    position: relative; display: grid; place-items: center; width: 100%; aspect-ratio: 1;
+    background: #fff; border: 3px solid var(--plum); border-radius: clamp(18px, 4.5vw, 30px);
+    box-shadow: 4px 4px 0 var(--plum);
+    transition: transform .22s var(--spring), box-shadow .22s, opacity .2s;
+  }
+  .opt:nth-child(odd):hover  .tile { transform: translate(-2px, -2px) rotate(-3deg); box-shadow: 7px 7px 0 var(--plum); }
+  .opt:nth-child(even):hover .tile { transform: translate(-2px, -2px) rotate(3deg);  box-shadow: 7px 7px 0 var(--plum); }
+  .opt:active .tile { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--plum); }
+  .scale .opt.on:nth-child(n) .tile { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--plum); animation: fb-tile .55s var(--spring); }
+  .scale.has-value .opt:not(.on) .tile { opacity: .6; }
+  @keyframes fb-tile { 0% { scale: .8; rotate: -12deg; } 60% { scale: 1.14; rotate: 5deg; } 100% { scale: 1; rotate: 0deg; } }
+  .opt input:focus-visible + .tile { outline: 3px solid var(--purple); outline-offset: 4px; }
+
+  .face-wrap { display: block; width: 78%; aspect-ratio: 1; }
+  .face { width: 100%; height: 100%; display: block; overflow: visible; --bg-cur: #fff; --ink-cur: var(--plum); }
+  .opt:hover .face, .opt.on .face { --bg-cur: var(--c); --ink-cur: var(--ink); }
+
+  .badge {
+    position: absolute; top: -10px; right: -10px; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--plum); display: grid; place-items: center;
+    transform: scale(0); transition: transform .3s cubic-bezier(.3, 1.9, .5, 1);
+  }
+  .opt.on .badge { transform: scale(1); }
+  .ends { display: flex; justify-content: space-between; margin-top: 14px; font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+
+  .auth-panel { margin: 22px 0; padding: 18px; border: 2px solid var(--plum); border-radius: 18px; background: #fff; }
+  .auth-panel p { margin: 0 0 12px; font-weight: 700; }
+  .auth-panel[hidden], .auth-panel [hidden] { display: none !important; }
+  .auth-button { border: 2px solid var(--plum); border-radius: 999px; background: var(--orange); color: var(--plum); font: 700 15px var(--text); padding: 10px 17px; cursor: pointer; margin: 4px 0 10px; }
+  .auth-button:hover { transform: translateY(-2px); }
+  .auth-button:disabled { opacity: .5; cursor: wait; }
+  .auth-or { font-size: 13px; margin: 8px 0; opacity: .7; }
+  .auth-label { display: block; margin: 8px 0 4px; font-size: 13px; font-weight: 700; }
+  .auth-panel input { width: 100%; max-width: 340px; display: block; padding: 10px 12px; border: 2px solid var(--plum); border-radius: 10px; font: 500 15px var(--text); }
+  .auth-panel .auth-help { font-size: 12px; font-weight: 500; margin-top: 8px; }
+  .auth-panel a { color: var(--purple); font-weight: 700; }
+  /* ===== Text + submit ===== */
+  .more { border-top: 3px dashed rgba(20, 11, 36, .2); padding-top: 30px; }
+  .more label { display: block; margin-bottom: 12px; font-family: var(--display); font-weight: 800; font-size: clamp(24px, 4.4vw, 32px); letter-spacing: -.03em; line-height: 1.05; }
+  .more label small { font-family: var(--text); font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; opacity: .7; margin-left: 8px; }
+  textarea {
+    display: block; width: 100%; min-height: 120px; resize: vertical; padding: 16px 18px;
+    font: 500 18px/1.4 var(--text); color: var(--plum); background: #fff;
+    border: 3px solid var(--plum); border-radius: 24px; outline: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  textarea::placeholder { color: rgba(20, 11, 36, .55); }
+  textarea:focus { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--purple); }
+  .count { text-align: right; margin-top: 8px; font-weight: 700; font-size: 14px; opacity: .7; }
+  .submit {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    width: 100%; min-height: 66px; margin-top: 16px; padding: 18px 32px;
+    background: var(--plum); color: var(--cream); border: 3px solid var(--plum); border-radius: 999px;
+    font: 700 22px var(--text); cursor: pointer; box-shadow: 5px 5px 0 var(--purple);
+    transition: transform .2s var(--spring), box-shadow .2s, opacity .2s;
+  }
+  .submit svg { transition: transform .25s var(--spring); }
+  .submit:hover:not(:disabled) { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--purple); }
+  .submit:hover:not(:disabled) svg { transform: translateX(6px); }
+  .submit:active:not(:disabled) { transform: translate(5px, 5px); box-shadow: 0 0 0 var(--purple); }
+  .submit:focus-visible { outline: 3px solid var(--purple); outline-offset: 4px; }
+  .submit:disabled { opacity: .4; cursor: not-allowed; box-shadow: none; }
+  .submit.sending { animation: fb-pulse 1s infinite; }
+  @keyframes fb-pulse { 50% { opacity: .65; } }
+  .errwrap { min-height: 48px; margin-top: 12px; text-align: center; }
+  #fb-err:not(:empty) { display: inline-block; background: var(--orange); border: 3px solid var(--plum); border-radius: 999px; padding: 8px 18px; font-weight: 700; animation: fb-chip .35s var(--spring); }
+
+  /* ===== Thank you ===== */
+  .thanks { text-align: center; padding: 12px 0 4px; }
+  .t-burst { width: 160px; height: 160px; display: block; margin: 0 auto 8px; overflow: visible; filter: drop-shadow(5px 5px 0 var(--plum)); animation: fb-spinin .9s cubic-bezier(.3, 1.5, .5, 1) both; }
+  @keyframes fb-spinin { from { scale: 0; rotate: -120deg; } }
+  .tb { fill: var(--orange); stroke: var(--plum); stroke-width: 5; stroke-linejoin: round; transform-box: fill-box; transform-origin: center; animation: fb-spin 22s linear infinite; }
+  .tc { fill: none; stroke: var(--plum); stroke-width: 16; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 140; stroke-dashoffset: 140; animation: fb-draw .5s .55s ease forwards; }
+  @keyframes fb-draw { to { stroke-dashoffset: 0; } }
+  .thanks h3 { margin: 12px 0 10px; font-family: var(--display); font-weight: 800; font-size: clamp(36px, 7vw, 56px); line-height: .95; letter-spacing: -.04em; }
+  .thanks p { margin: 0 auto 14px; max-width: 420px; font-weight: 500; font-size: 20px; line-height: 1.35; }
+  .linkbtn { min-height: 44px; padding: 10px 14px; background: none; border: 0; font: 700 18px var(--text); color: var(--purple); text-decoration: underline; text-underline-offset: 5px; cursor: pointer; }
+
+  /* particles */
+  .piece { position: fixed; z-index: 9999; pointer-events: none; will-change: transform, opacity; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #feedback *, #feedback *::before { animation: none !important; transition-duration: .01s !important; }
+    #feedback:not(.in) .reveal { opacity: 1; transform: none; }
+    .tc { stroke-dashoffset: 0 !important; }
+  }
+</style>
+</head>
+<body>
+
+<section id="feedback" aria-labelledby="fb-title">
+
+  <!-- brand shapes -->
+  <svg class="deco d-burst" viewBox="0 0 200 200" aria-hidden="true"><polygon fill="#FF9A52" points="100,0 121,49 171,29 151,79 200,100 151,121 171,171 121,151 100,200 79,151 29,171 49,121 0,100 49,79 29,29 79,49"/></svg>
+  <svg class="deco d-checker" viewBox="0 0 152 152" aria-hidden="true"><g fill="#FFEFCB" fill-opacity="0.16"><rect x="0" y="0" width="38" height="38"/><rect x="76" y="0" width="38" height="38"/><rect x="38" y="38" width="38" height="38"/><rect x="114" y="38" width="38" height="38"/><rect x="0" y="76" width="38" height="38"/><rect x="76" y="76" width="38" height="38"/><rect x="38" y="114" width="38" height="38"/><rect x="114" y="114" width="38" height="38"/></g></svg>
+  <svg class="deco d-spark1" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFEFCB" d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg>
+  <svg class="deco d-spark2" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFEFCB" d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg>
+
+  <div class="wrap">
+    <nav class="route-links" aria-label="Feedback links">
+      <a href="/">← Plans</a>
+      <a href="https://joinplansnow.web.app/?feedback=1">Already signed in? Use the web app ↗</a>
+    </nav>
+    <header>
+      <span class="kicker reveal" style="--d:0s">Your turn</span>
+      <h2 id="fb-title" class="reveal" style="--d:.08s">How did <span>Plans</span> do?</h2>
+      <p class="sub reveal" style="--d:.16s">Two taps and a line, if you've got one.</p>
+    </header>
+
+    <div class="card reveal" style="--d:.26s">
+      <form id="fb-form" novalidate>
+
+        <div class="q" data-key="experience">
+          <div class="q-head">
+            <div class="q-text">
+              <span class="q-chip">01 · The app</span>
+              <h3 id="q-exp">How was using Plans?</h3>
+              <p class="hint">How it felt, how it worked.</p>
+              <div class="mood" aria-live="polite"></div>
+            </div>
+            <div class="hero" role="img" aria-label="A face that changes with your pick"></div>
+          </div>
+          <div class="scale" role="radiogroup" aria-labelledby="q-exp"></div>
+          <div class="ends" aria-hidden="true"><span>Not great</span><span>Loved it</span></div>
+        </div>
+
+        <div class="q" data-key="idea">
+          <div class="q-head">
+            <div class="q-text">
+              <span class="q-chip">02 · The idea</span>
+              <h3 id="q-idea">How do you feel about the idea?</h3>
+              <p class="hint">Make plans, not posts.</p>
+              <div class="mood" aria-live="polite"></div>
+            </div>
+            <div class="hero" role="img" aria-label="A face that changes with your pick"></div>
+          </div>
+          <div class="scale" role="radiogroup" aria-labelledby="q-idea"></div>
+          <div class="ends" aria-hidden="true"><span>Not for me</span><span>Love it</span></div>
+        </div>
+
+        <div class="more">
+          <label for="fb-text">Anything else? <small>Optional</small></label>
+          <textarea id="fb-text" maxlength="500" placeholder="What did you love? What annoyed you? What's missing?"></textarea>
+          <div class="count"><span id="fb-count">0</span>/500</div>
+          <div class="auth-panel" id="fb-auth-panel">
+            <p id="fb-auth-status" aria-live="polite">Checking your account…</p>
+            <div id="fb-auth-actions" hidden>
+              <button id="fb-google" type="button" class="auth-button">Continue with Google</button>
+              <div class="auth-or">or sign in with your Plans account</div>
+              <label class="auth-label" for="fb-email">Email</label>
+              <input id="fb-email" type="email" autocomplete="email" inputmode="email">
+              <label class="auth-label" for="fb-password">Password</label>
+              <input id="fb-password" type="password" autocomplete="current-password">
+              <button id="fb-email-signin" type="button" class="auth-button">Sign in with email</button>
+              <p class="auth-help">New to Plans? <a href="https://joinplansnow.web.app/?feedback=1">Create an account in the web app</a>.</p>
+            </div>
+          </div>
+          <button class="submit" id="fb-submit" type="submit" disabled>
+            <span id="fb-submit-label">Send feedback</span>
+            <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="#FFEFCB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="errwrap"><span id="fb-err" role="alert"></span></div>
+        </div>
+      </form>
+
+      <div class="thanks" id="fb-thanks" hidden>
+        <svg class="t-burst" viewBox="0 0 200 200" aria-hidden="true">
+          <polygon class="tb" points="100,0 121,49 171,29 151,79 200,100 151,121 171,171 121,151 100,200 79,151 29,171 49,121 0,100 49,79 29,29 79,49"/>
+          <path class="tc" d="M62 104 L90 132 L142 72"/>
+        </svg>
+        <h3>Got it. Thank you.</h3>
+        <p>What you said shapes what Plans becomes. Now go make a plan.</p>
+        <button class="linkbtn" id="fb-again" type="button">Send another response</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyCGbvMjdMiqtXjT7wbU4UkxEEz7AQdjNfo",
+  appId: "1:1021697044827:web:9f394469d801bbf98d6a7e",
+  messagingSenderId: "1021697044827",
+  projectId: "joinplansnow",
+  authDomain: "joinplansnow.firebaseapp.com",
+});
+const auth = getAuth(app);
+const db = getFirestore(app);
+const status = document.getElementById("fb-auth-status");
+const actions = document.getElementById("fb-auth-actions");
+const error = document.getElementById("fb-err");
+const google = document.getElementById("fb-google");
+const emailButton = document.getElementById("fb-email-signin");
+
+onAuthStateChanged(auth, user => {
+  status.textContent = user ? `Sending as ${user.email || "your Plans account"}` : "Sign in to send feedback privately to the Plans team.";
+  actions.hidden = !!user;
+}, () => {
+  status.textContent = "Could not check your account. Refresh and try again.";
+  actions.hidden = false;
+});
+
+google.addEventListener("click", async () => {
+  google.disabled = true;
+  error.textContent = "";
+  try { await signInWithPopup(auth, new GoogleAuthProvider()); }
+  catch (e) { error.textContent = e.code === "auth/unauthorized-domain"
+    ? "Google sign-in needs this site enabled in Firebase. Use email sign-in or open the Plans web app."
+    : "Could not sign in with Google. Try again or use email."; }
+  finally { google.disabled = false; }
+});
+
+emailButton.addEventListener("click", async () => {
+  const email = document.getElementById("fb-email").value.trim();
+  const password = document.getElementById("fb-password").value;
+  if (!email || !password) { error.textContent = "Enter your email and password."; return; }
+  emailButton.disabled = true;
+  error.textContent = "";
+  try { await signInWithEmailAndPassword(auth, email, password); }
+  catch (_) { error.textContent = "That sign-in did not work. Check your details and try again."; }
+  finally { emailButton.disabled = false; }
+});
+
+window.plansSubmitFeedback = async ({ experience, idea, comment }) => {
+  const user = auth.currentUser;
+  if (!user) {
+    document.getElementById("fb-auth-panel").scrollIntoView({ behavior: "smooth", block: "center" });
+    throw new Error("Sign in above, then send your feedback.");
+  }
+  if (experience === null && idea === null) throw new Error("Pick at least one face first.");
+  if (comment.length > 500) throw new Error("Keep your note under 500 characters.");
+  await addDoc(collection(db, "productFeedback"), {
+    userId: user.uid,
+    experience,
+    idea,
+    comment,
+    createdAt: serverTimestamp(),
+  });
+};
+</script>
+
+<script>
+(() => {
+  /* ===== CONFIG =====
+     The Firebase module below writes to the app's private productFeedback collection. */
+  // Feedback is sent to Firestore by the module below, never stored locally.
+
+  const root = document.getElementById("feedback");
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* reveal on scroll */
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { root.classList.add("in"); io.disconnect(); } }, { threshold: .15 });
+    io.observe(root);
+  } else root.classList.add("in");
+
+  /* ===== The five faces (200x200 space) =====
+     mouth = [x1,y1, cx,cy, x2,y2]   tilt = inner-brow lift (sad > 0)   tear 0-1   eye = radius   spark 0-1   c = face colour   ink = feature colour */
+  const LEVELS = [
+    { name: "Not great", c: "#2554DB", ink: "#FFEFCB", mouth: [68,128, 100,102, 132,128], tilt: 6,  tear: 1, eye: 6,   spark: 0 },
+    { name: "Meh",       c: "#140B24", ink: "#FFEFCB", mouth: [72,124, 100,118, 128,124], tilt: 3,  tear: 0, eye: 6,   spark: 0 },
+    { name: "It's okay", c: "#FFEFCB", ink: "#140B24", mouth: [72,120, 100,120, 128,120], tilt: 0,  tear: 0, eye: 6,   spark: 0 },
+    { name: "Liked it",  c: "#FF9A52", ink: "#140B24", mouth: [66,114, 100,142, 134,114], tilt: -1, tear: 0, eye: 6.5, spark: 0 },
+    { name: "Loved it!", c: "#6600F2", ink: "#FFEFCB", mouth: [58,108, 100,160, 142,108], tilt: -2, tear: 0, eye: 7.5, spark: 1 },
+  ];
+  const IDLE = { name: "", c: "#FFFFFF", ink: "#140B24", mouth: [72,120, 100,120, 128,120], tilt: 0, tear: 0, eye: 6, spark: 0 };
+
+  const BURST_PTS = "100,0 121,49 171,29 151,79 200,100 151,121 171,171 121,151 100,200 79,151 29,171 49,121 0,100 49,79 29,29 79,49";
+  const SPARK_D = "M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z";
+  const DROP_D = "M0 -10 C7 -2 9 3 9 6 A9 9 0 1 1 -9 6 C-9 3 -7 -2 0 -10Z";
+
+  const hex2rgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const ease = t => { const c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  // vector: mouth(6) tilt tear eye spark | face rgb(3) | ink rgb(3)
+  const vec = L => [...L.mouth, L.tilt, L.tear, L.eye, L.spark, ...hex2rgb(L.c), ...hex2rgb(L.ink)];
+
+  function faceSVG(hero) {
+    return `<svg viewBox="0 0 200 200" class="${hero ? "hero-svg" : "face"}" aria-hidden="true">
+      ${hero ? `<polygon class="burst bg" stroke-linejoin="round" points="${BURST_PTS}"/>` : `<circle class="bg" cx="100" cy="100" r="86"/>`}
+      <g class="ink-s" stroke-width="8"><line data-f="bl" x1="54" y1="68" x2="90" y2="68"/><line data-f="br" x1="146" y1="68" x2="110" y2="68"/></g>
+      <g class="eyes" style="animation-delay:-${(Math.random() * 4).toFixed(1)}s"><circle data-f="el" class="ink-f" cx="78" cy="90" r="6"/><circle data-f="er" class="ink-f" cx="122" cy="90" r="6"/></g>
+      <path data-f="mouth" class="ink-s" stroke-width="10" d="M72 120 Q100 120 128 120"/>
+      <g data-f="tear" opacity="0"><path class="tear-drop ink-f" d="${DROP_D}"/></g>
+      <g data-f="spark" opacity="0"><path class="spark-shape ink-f" d="${SPARK_D}" transform="translate(-12 -12)"/></g>
+    </svg>`;
+  }
+
+  function applyGeometry(svg, v) {
+    const q = k => svg.querySelector(`[data-f="${k}"]`);
+    q("mouth").setAttribute("d", `M${v[0]} ${v[1]} Q${v[2]} ${v[3]} ${v[4]} ${v[5]}`);
+    const by = 68 - v[6] * 2.5;
+    q("bl").setAttribute("y2", by); q("br").setAttribute("y2", by);
+    const r = Math.max(1, v[8]);
+    q("el").setAttribute("r", r); q("er").setAttribute("r", r);
+    const t = clamp(v[7], 0, 1);
+    q("tear").setAttribute("opacity", t);
+    q("tear").setAttribute("transform", `translate(62 106) scale(${(0.5 + 0.7 * t).toFixed(3)})`);
+    const s = Math.max(0, v[9]);
+    q("spark").setAttribute("opacity", Math.min(1, s));
+    q("spark").setAttribute("transform", `translate(140 58) scale(${(s * 1.35).toFixed(3)})`);
+  }
+  function applyColors(svg, v) {
+    const rgb = a => `rgb(${a.map(x => Math.round(clamp(x, 0, 255))).join(",")})`;
+    svg.style.setProperty("--bg-cur", rgb(v.slice(10, 13)));
+    svg.style.setProperty("--ink-cur", rgb(v.slice(13, 16)));
+  }
+
+  /* ===== Particles in brand shapes ===== */
+  const PALETTE = ["#FF9A52", "#2554DB", "#6600F2", "#FFEFCB"];
+  function pieceEl(kind, color, size) {
+    const sv = {
+      spark:  `<svg viewBox="0 0 24 24"><path d="${SPARK_D}"/></svg>`,
+      burst:  `<svg viewBox="0 0 200 200"><polygon points="${BURST_PTS}"/></svg>`,
+      square: `<svg viewBox="0 0 38 38"><rect width="38" height="38"/></svg>`,
+      drop:   `<svg viewBox="-10 -12 20 28"><path d="${DROP_D}"/></svg>`,
+    }[kind];
+    const p = document.createElement("span");
+    p.className = "piece"; p.innerHTML = sv;
+    const s = p.firstChild, sw = { spark: 1.2, burst: 9, square: 3, drop: 1.2 }[kind];
+    s.style.cssText = `display:block;overflow:visible;width:${size}px;height:${size}px;fill:${color};stroke:#140B24;stroke-width:${sw};stroke-linejoin:round`;
+    return p;
+  }
+  function fly(p, ox, oy, dx, dy, fall, dur, spin) {
+    p.style.left = ox + "px"; p.style.top = oy + "px";
+    document.body.appendChild(p);
+    p.animate([
+      { transform: "translate(-50%,-50%) scale(.2)", opacity: 1 },
+      { transform: `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(1) rotate(${spin / 2}deg)`, opacity: 1, offset: .5 },
+      { transform: `translate(calc(-50% + ${dx * 1.15}px), calc(-50% + ${dy + fall}px)) scale(.7) rotate(${spin}deg)`, opacity: 0 },
+    ], { duration: dur, easing: "cubic-bezier(.2,.8,.3,1)" }).onfinish = () => p.remove();
+  }
+  function reaction(anchor, val) {
+    if (reduced || val === 3) return;
+    const r = anchor.getBoundingClientRect(), ox = r.left + r.width / 2, oy = r.top + r.height / 2;
+    if (val <= 2) {            // a few tears fall
+      for (let i = 0; i < 4; i++) fly(pieceEl("drop", "#2554DB", 16 + Math.random() * 8), ox + (i - 1.5) * 18, oy, (Math.random() - .5) * 20, -10, 90 + Math.random() * 40, 900 + Math.random() * 300, 0);
+      return;
+    }
+    const n = val === 5 ? 14 : 8, kinds = ["spark", "burst", "square", "spark"];
+    for (let i = 0; i < n; i++) {
+      const a = (Math.PI * 2 * i) / n + Math.random() * .5, d = 60 + Math.random() * 70;
+      fly(pieceEl(kinds[i % 4], PALETTE[i % 4], 16 + Math.random() * 16), ox, oy, Math.cos(a) * d, Math.sin(a) * d - 40, 60, 950 + Math.random() * 400, Math.random() * 200 - 100);
+    }
+  }
+  function confetti() {
+    if (reduced) return;
+    const kinds = ["spark", "burst", "square", "spark", "square"], cx = innerWidth / 2, cy = innerHeight * .45;
+    for (let i = 0; i < 46; i++) {
+      fly(pieceEl(kinds[i % 5], PALETTE[i % 4], 14 + Math.random() * 24), cx, cy, (Math.random() - .5) * innerWidth * .85, -140 - Math.random() * 260, 460, 1500 + Math.random() * 800, Math.random() * 540 - 270);
+    }
+  }
+
+  /* ===== Build each question ===== */
+  const state = {};
+  const submit = document.getElementById("fb-submit");
+
+  document.querySelectorAll("#feedback .q").forEach(q => {
+    const key = q.dataset.key;
+    const heroEl = q.querySelector(".hero"), mood = q.querySelector(".mood"), scale = q.querySelector(".scale");
+    heroEl.innerHTML = faceSVG(true);
+    const heroSvg = heroEl.firstElementChild;
+    let current = vec(IDLE), raf, sel = -1;
+
+    const render = v => { applyGeometry(heroSvg, v); applyColors(heroSvg, v); };
+    render(current); heroSvg.classList.add("idle");
+
+    function setMood(L, i) {
+      mood.innerHTML = L
+        ? `<span class="chip" style="--c:${L.c};--ink:${L.ink};rotate:${i % 2 ? 2 : -2}deg">${L.name}</span>`
+        : `<span class="chip idle">Pick a face</span>`;
+    }
+    setMood(null);
+
+    function morph(target) {
+      cancelAnimationFrame(raf);
+      const from = current.slice(), t0 = performance.now(), dur = reduced ? 1 : 560;
+      const step = now => {
+        const p = Math.min((now - t0) / dur, 1), e = ease(p);
+        current = from.map((a, k) => a + (target[k] - a) * e);
+        render(current);
+        if (p < 1) raf = requestAnimationFrame(step); else current = target.slice();
+      };
+      raf = requestAnimationFrame(step);
+    }
+
+    function preview(L, i) { heroSvg.classList.remove("idle"); morph(vec(L)); setMood(L, i); }
+    function settle() {
+      if (sel < 0) { heroSvg.classList.add("idle"); morph(vec(IDLE)); setMood(null); }
+      else { morph(vec(LEVELS[sel])); setMood(LEVELS[sel], sel); }
+    }
+
+    const opts = [];
+    LEVELS.forEach((L, i) => {
+      const val = i + 1;
+      const el = document.createElement("label");
+      el.className = "opt";
+      el.innerHTML = `<input type="radio" name="${key}" value="${val}" aria-label="${L.name}">
+        <span class="tile">
+          <span class="face-wrap" style="--c:${L.c};--ink:${L.ink}">${faceSVG(false)}</span>
+          <span class="badge"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#FFEFCB" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </span>`;
+      applyGeometry(el.querySelector("svg"), vec(L));
+      scale.appendChild(el); opts.push(el);
+
+      el.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") preview(L, i); });
+      el.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") settle(); });
+
+      el.querySelector("input").addEventListener("change", () => {
+        state[key] = val; sel = i;
+        scale.classList.add("has-value");
+        opts.forEach((o, j) => o.classList.toggle("on", j === i));
+        preview(L, i);
+        heroEl.classList.remove("pop", "shake"); void heroEl.offsetWidth;
+        heroEl.classList.add(val <= 2 ? "shake" : "pop");
+        reaction(el, val);
+        submit.disabled = false;
+      });
+    });
+  });
+
+  /* ===== Text counter + submit ===== */
+  const text = document.getElementById("fb-text");
+  text.addEventListener("input", () => { document.getElementById("fb-count").textContent = text.value.length; });
+
+  const form = document.getElementById("fb-form"), thanks = document.getElementById("fb-thanks");
+  const err = document.getElementById("fb-err"), label = document.getElementById("fb-submit-label");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    err.textContent = "";
+    if (!(state.experience || state.idea)) { err.textContent = "Pick at least one face first."; return; }
+    const payload = {
+      experience: state.experience ?? null,
+      idea: state.idea ?? null,
+      comment: text.value.trim(),
+      submittedAt: new Date().toISOString(),
+    };
+    submit.disabled = true; submit.classList.add("sending"); label.textContent = "Sending…";
+    try {
+      if (typeof window.plansSubmitFeedback !== 'function') throw new Error('Still connecting to Plans. Please refresh and try again.');
+      await window.plansSubmitFeedback(payload);
+      form.hidden = true; thanks.hidden = false; confetti();
+    } catch (error) {
+      err.textContent = error?.message || "Couldn't send that. Check your connection and try again.";
+      submit.disabled = false;
+    } finally {
+      submit.classList.remove("sending"); label.textContent = "Send feedback";
+    }
+  });
+
+  document.getElementById("fb-again").addEventListener("click", () => location.reload());
+})();
+</script>
+</body>
+</html>
