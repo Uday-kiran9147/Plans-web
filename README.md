@@ -51,10 +51,11 @@ the layout moves when you swap them in.
 - `app/privacy/page.tsx`, `app/terms/page.tsx` - the `[bracketed]` entity name,
   registered address and liability cap; then a legal review. Once those are
   filled in, drop `<TemplateNotice />` from both pages.
-- `app/page.tsx` -> `Download` - the signup form posts to `mailto:` today; point
-  `action` at a real endpoint.
-- Store buttons in `Download` - swap the "coming soon" chips for real App Store
-  and Play links.
+- Android and web are live. Their links are configured in `components/site.ts`
+  as `playStoreUrl` and `webAppUrl`.
+- iOS is coming soon; iPhone and iPad users are directed to the web version.
+  When iOS launches, replace the App Store chip in `Download` with its live link
+  and update the hero, FAQ and structured data in `app/page.tsx`.
 
 ## Icons
 

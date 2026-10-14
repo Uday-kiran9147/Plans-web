@@ -147,8 +147,8 @@ const faqs = [
     a: "Plans is free to use. If we ever add a paid tier it will be for extras, and we will say so clearly before anything changes.",
   },
   {
-    q: "When can I download it?",
-    a: "We are in the final stretch before the public beta on iOS and Android. Leave your email below and the invite lands the day it opens.",
+    q: "Where can I use Plans?",
+    a: "Plans is available now on Android through Google Play and on the web. The iOS app is coming soon. Until then, iPhone and iPad users can use Plans in their browser using the web link below.",
   },
 ];
 
@@ -169,7 +169,8 @@ function StructuredData() {
         name: site.name,
         description: site.description,
         applicationCategory: "SocialNetworkingApplication",
-        operatingSystem: "iOS, Android",
+        operatingSystem: "Android, Web",
+        downloadUrl: site.playStoreUrl,
         url: site.url,
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
       },
@@ -227,7 +228,7 @@ function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-70" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-success" />
               </span>
-              Public beta opening soon on iOS &amp; Android
+              Available now on Android &amp; web
             </span>
 
             <h1 className="mt-4 sm:mt-6 text-balance text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-semibold leading-[1.08] tracking-tight">
@@ -245,7 +246,7 @@ function Hero() {
                 href="#download"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] sm:shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
               >
-                Get early access
+                Get Plans
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
@@ -255,6 +256,19 @@ function Hero() {
                 Watch the film
               </Link>
             </div>
+
+            <p className="mt-4 text-xs sm:text-sm text-text-secondary">
+              iOS is coming soon. In the meantime,{" "}
+              <a
+                href={site.webAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-text-primary"
+              >
+                use Plans on the web
+              </a>
+              .
+            </p>
 
             <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-text-tertiary">
               Free to use · No ads · No endless scroll
@@ -543,11 +557,6 @@ function Faq() {
 }
 
 function Download() {
-  const stores = [
-    { Icon: AppleIcon, top: "Coming soon to", bottom: "the App Store" },
-    { Icon: GooglePlayIcon, top: "Coming soon to", bottom: "Google Play" },
-  ];
-
   return (
     <section id="download" className="scroll-mt-24 px-4 pb-16 sm:px-6 sm:pb-24 lg:px-8 lg:pb-32">
       <div className="relative mx-auto max-w-5xl overflow-hidden rounded-[1.75rem] sm:rounded-[2rem] border border-stroke bg-[linear-gradient(140deg,#24153a_0%,#140b24_50%,#2e1b48_100%)] px-4 py-10 sm:px-14 sm:py-16 text-center">
@@ -566,8 +575,8 @@ function Download() {
             Your next free evening is already there.
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-lg text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
-            Join the beta list and the invite arrives the day {site.name} opens in your
-            city. Or skip the wait entirely - {site.name} already runs in your browser.
+            {site.name} is available now on Android and the web. The iOS app is
+            coming soon. On iPhone or iPad? Use the web version in your browser today.
           </p>
 
           <a
@@ -582,24 +591,33 @@ function Download() {
           </a>
 
           <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row">
-            {stores.map(({ Icon, top, bottom }) => (
-              <span
-                key={bottom}
-                className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left sm:w-auto"
-              >
-                <Icon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
-                <span className="leading-tight">
-                  <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
-                    {top}
-                  </span>
-                  <span className="block text-xs sm:text-sm font-medium text-text-primary">{bottom}</span>
+            <a
+              href={site.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left transition hover:border-accent/50 hover:bg-surface sm:w-auto"
+            >
+              <GooglePlayIcon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
+              <span className="leading-tight">
+                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+                  Get it on
                 </span>
+                <span className="block text-xs sm:text-sm font-medium text-text-primary">Google Play</span>
               </span>
-            ))}
+            </a>
+            <span className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left sm:w-auto">
+              <AppleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
+              <span className="leading-tight">
+                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
+                  Coming soon to
+                </span>
+                <span className="block text-xs sm:text-sm font-medium text-text-primary">the App Store</span>
+              </span>
+            </span>
           </div>
 
           <p className="mt-5 sm:mt-6 text-[11px] sm:text-xs text-text-tertiary">
-            We only use your email for the beta invite. See the{" "}
+            Learn how we handle your data in our{" "}
             <Link
               href="/privacy"
               className="text-text-secondary underline underline-offset-2 hover:text-text-primary"

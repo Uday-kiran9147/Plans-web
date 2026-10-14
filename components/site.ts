@@ -12,8 +12,10 @@ export const site = {
    * Update this if the web app ever moves to a custom domain.
    */
   webAppUrl: "https://joinplansnow.web.app",
+  /** Live Android listing on Google Play. */
+  playStoreUrl: "https://play.google.com/store/apps/details?id=com.plans.app",
   /** One address for everything: support, privacy requests, legal. */
-  supportEmail: "thehustler.dev@gmail.com",
+  supportEmail: "hello@drophouse.club",
   privacyEmail: "thehustler.dev@gmail.com",
   /** Published on /child-safety and given to Google Play. Must be monitored. */
   childSafetyEmail: "thehustler.dev@gmail.com",
