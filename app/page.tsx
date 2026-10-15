@@ -18,7 +18,6 @@ import {
   CheckIcon,
   ClockIcon,
   CompassIcon,
-  GooglePlayIcon,
   LockIcon,
   PeopleIcon,
   PinIcon,
@@ -590,22 +589,24 @@ function Download() {
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
 
-          <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row">
+          <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
               href={site.playStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left transition hover:border-accent/50 hover:bg-surface sm:w-auto"
+              className="inline-flex items-center justify-center transition-transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange"
+              aria-label="Get it on Google Play"
             >
-              <GooglePlayIcon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
-              <span className="leading-tight">
-                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
-                  Get it on
-                </span>
-                <span className="block text-xs sm:text-sm font-medium text-text-primary">Google Play</span>
-              </span>
+              <Image
+                src="/playstore-button.png"
+                alt="Get it on Google Play"
+                width={5984}
+                height={2087}
+                className="h-12 sm:h-14 w-auto object-contain drop-shadow-[0_6px_20px_rgba(0,0,0,0.5)] transition-all hover:drop-shadow-[0_8px_24px_rgba(255,155,80,0.35)]"
+                priority
+              />
             </a>
-            <span className="inline-flex w-full items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-4 py-2.5 sm:px-5 sm:py-3 text-left sm:w-auto">
+            <span className="inline-flex h-12 sm:h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-5 sm:px-6 text-left opacity-75 sm:w-auto">
               <AppleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
               <span className="leading-tight">
                 <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
