@@ -11,6 +11,9 @@ const columns = [
       { href: "/#privacy-first", label: "Privacy by design" },
       { href: "/#faq", label: "FAQ" },
       { href: "/feedback", label: "Give feedback" },
+      { href: "/wall", label: "Sign Wall" },
+      { href: site.wallAndroidUrl, label: "Sign Wall (Android)" },
+      { href: site.wallIosUrl, label: "Sign Wall (iOS)" },
     ],
   },
   {
@@ -48,16 +51,20 @@ export function Footer() {
                 {col.title}
               </h3>
               <ul className="mt-3 sm:mt-4 flex flex-col gap-2 sm:gap-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-xs sm:text-sm text-text-secondary transition hover:text-cream"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const isExternal = link.href.startsWith("http");
+                  return (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-xs sm:text-sm text-text-secondary transition hover:text-cream"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

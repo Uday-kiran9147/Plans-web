@@ -14,6 +14,9 @@ export const site = {
   webAppUrl: "https://joinplansnow.web.app",
   /** Live Android listing on Google Play. */
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.plans.app",
+  /** Founding Sign Wall links */
+  wallAndroidUrl: "https://plans.drophouse.club/wall",
+  wallIosUrl: "https://joinplansnow.web.app/wall",
   /** One address for everything: support, privacy requests, legal. */
   supportEmail: "hello@drophouse.club",
   privacyEmail: "thehustler.dev@gmail.com",
@@ -36,4 +39,5 @@ export const nav = [
   { href: "/#privacy-first", label: "Privacy" },
   { href: "/#faq", label: "FAQ" },
   { href: "/feedback", label: "Feedback" },
+  { href: "/wall", label: "Sign Wall" },
 ] as const;

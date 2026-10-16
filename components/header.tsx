@@ -4,10 +4,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LogoMark } from "./icons";
 import { nav, site } from "./site";
+import { useWallUrl } from "./sign-wall-link";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { url: wallUrl } = useWallUrl();
+  const [downloadHref, setDownloadHref] = useState("/download");
+
+  useEffect(() => {
+    const ua = navigator.userAgent || "";
+    if (/Android/i.test(ua)) {
+      setDownloadHref(site.playStoreUrl);
+    } else {
+      setDownloadHref(site.webAppUrl);
+    }
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -29,20 +41,33 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-3 py-1.5 text-xs font-semibold text-text-secondary transition hover:bg-surface hover:text-cream"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const isWall = item.href === "/wall";
+            const href = isWall ? wallUrl : item.href;
+            const isExternal = isWall && href.startsWith("http");
+
+            return (
+              <Link
+                key={item.href}
+                href={href}
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+                  isWall
+                    ? "text-orange hover:bg-orange/10 hover:text-orange"
+                    : "text-text-secondary hover:bg-surface hover:text-cream"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/#download"
+            href={downloadHref}
+            target={downloadHref.startsWith("http") ? "_blank" : undefined}
+            rel={downloadHref.startsWith("http") ? "noopener noreferrer" : undefined}
             className="rounded-full border-2 border-plum-ink bg-orange px-4.5 py-2 text-xs font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_6px_0px_#302547] active:translate-y-0.5"
           >
             Get the app
@@ -65,19 +90,30 @@ export function Header() {
       {open ? (
         <div className="border-t border-stroke/70 bg-ink/95 backdrop-blur-2xl px-5 pb-6 pt-3 md:hidden shadow-2xl">
           <nav className="flex flex-col gap-1">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="rounded-xl px-3.5 py-2.5 text-sm font-semibold text-text-secondary transition hover:bg-surface hover:text-cream active:bg-surface"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {nav.map((item) => {
+              const isWall = item.href === "/wall";
+              const href = isWall ? wallUrl : item.href;
+              const isExternal = isWall && href.startsWith("http");
+
+              return (
+                <Link
+                  key={item.href}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={`rounded-xl px-3.5 py-2.5 text-sm font-semibold transition hover:bg-surface hover:text-cream active:bg-surface ${
+                    isWall ? "text-orange font-bold" : "text-text-secondary"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <Link
-              href="/#download"
+              href={downloadHref}
               onClick={() => setOpen(false)}
+              target={downloadHref.startsWith("http") ? "_blank" : undefined}
+              rel={downloadHref.startsWith("http") ? "noopener noreferrer" : undefined}
               className="mt-3 rounded-xl border-2 border-plum-ink bg-orange px-4 py-3 text-center text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] active:translate-y-0.5"
             >
               Get the app

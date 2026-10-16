@@ -29,9 +29,10 @@ export function TickerBanner() {
   };
 
   const tickerItems = [
-    "🚨 NO FEEDS",
+    "✨ BE A FOUNDING MEMBER — STAMP YOUR NAME ON THE WALL",
+    "⚡ NO FEEDS",
     "100% REAL HUMAN PRESENCE",
-    "REAL PEOPLE IN REAL PLACES",
+    "🎟️ FIRST 100 FOUNDING SPOTS OPEN NOW",
     "ZERO AD TRACKERS",
     "INTENT OVER ALGORITHMS",
     "SELF-DESTRUCTING ROOMS",

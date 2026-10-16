@@ -7,6 +7,7 @@ import { ArtworkGallery } from "@/components/artwork-gallery";
 import { InteractiveSimulator } from "@/components/interactive-simulator";
 import { HeroStage } from "@/components/hero-stage";
 import { VideoWalkthrough } from "@/components/video-walkthrough";
+import { FoundingWallBanner } from "@/components/founding-wall-banner";
 import {
   AppleIcon,
   ArrowRightIcon,
@@ -241,13 +242,13 @@ function Hero() {
             </p>
 
             <div className="mt-7 sm:mt-9 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row lg:justify-start">
-              <Link
-                href="#download"
+              <a
+                href="/download"
                 className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] sm:shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
               >
                 Get Plans
                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
+              </a>
               <Link
                 href="#watch"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
@@ -255,23 +256,6 @@ function Hero() {
                 Watch the film
               </Link>
             </div>
-
-            <p className="mt-4 text-xs sm:text-sm text-text-secondary">
-              iOS is coming soon. In the meantime,{" "}
-              <a
-                href={site.webAppUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 hover:text-text-primary"
-              >
-                use Plans on the web
-              </a>
-              .
-            </p>
-
-            <p className="mt-4 sm:mt-5 text-[11px] sm:text-xs text-text-tertiary">
-              Free to use · No ads · No endless scroll
-            </p>
           </div>
 
           {/* Right Column: Interactive Cut-Paper Hero Stage */}
@@ -280,6 +264,7 @@ function Hero() {
           </div>
         </div>
 
+        {/* The Plans Screening Room */}
         <VideoWalkthrough />
       </div>
     </section>
@@ -574,8 +559,7 @@ function Download() {
             Your next free evening is already there.
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-lg text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
-            {site.name} is available now on Android and the web. The iOS app is
-            coming soon. On iPhone or iPad? Use the web version in your browser today.
+            {site.name} is available on Android, iOS and the web. iOS and web users can download and launch Plans directly in their browser at joinplansnow.web.app.
           </p>
 
           <a
@@ -585,7 +569,7 @@ function Download() {
             className="group mt-5 sm:mt-6 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft"
           >
             <BrowserIcon className="h-4 w-4" />
-            Open {site.name} in your browser
+            Download &amp; Open Plans on iOS / Web
             <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </a>
 
@@ -606,15 +590,27 @@ function Download() {
                 priority
               />
             </a>
-            <span className="inline-flex h-12 sm:h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-stroke bg-surface/70 px-5 sm:px-6 text-left opacity-75 sm:w-auto">
-              <AppleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-text-primary" />
+            <a
+              href={site.webAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 sm:h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-accent/60 bg-surface/90 px-5 sm:px-6 text-left transition hover:border-accent hover:bg-surface hover:scale-105 active:scale-95 sm:w-auto shadow-[0_4px_20px_rgba(106,0,244,0.25)]"
+              aria-label="Download Plans on iOS and Web"
+            >
+              <AppleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-cream" />
               <span className="leading-tight">
-                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-text-tertiary">
-                  Coming soon to
+                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-accent-soft font-bold">
+                  iOS &amp; Web Version
                 </span>
-                <span className="block text-xs sm:text-sm font-medium text-text-primary">the App Store</span>
+                <span className="block text-xs sm:text-sm font-medium text-text-primary">
+                  Open joinplansnow.web.app
+                </span>
               </span>
-            </span>
+            </a>
+          </div>
+
+          <div className="mx-auto max-w-4xl text-left">
+            <FoundingWallBanner />
           </div>
 
           <p className="mt-5 sm:mt-6 text-[11px] sm:text-xs text-text-tertiary">
