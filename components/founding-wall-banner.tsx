@@ -22,16 +22,6 @@ export function FoundingWallBanner() {
       <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-orange/20 blur-3xl animate-pulse" />
       <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-accent/30 blur-3xl" />
 
-      {/* Top Banner Tagline */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-orange/20 pb-3.5">
-        <div className="flex items-center gap-2">
-          <SparkIcon className="h-4 w-4 text-orange" />
-          <span className="font-mono text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-orange">
-            FOUNDING REGISTRY · FIRST 100 SPOTS
-          </span>
-        </div>
-      </div>
-
       {/* Main Grid: Video Reel beside Sign Wall Details */}
       <div className="mt-6 grid items-center gap-6 md:grid-cols-[240px_1fr] lg:grid-cols-[270px_1fr] lg:gap-10">
         {/* Left Column: Autoplaying Sign Wall Reel */}
