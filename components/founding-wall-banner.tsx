@@ -29,7 +29,7 @@ export function FoundingWallBanner() {
           <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.75rem] border-2 border-orange/50 bg-ink-soft shadow-[0_12px_40px_rgba(0,0,0,0.7)] ring-2 ring-orange/20">
             <video
               ref={videoRef}
-              src="/video/plans-signwall-reel.webm"
+              src="/video/plans-signwall-reel.mp4"
               autoPlay
               muted={muted}
               playsInline
