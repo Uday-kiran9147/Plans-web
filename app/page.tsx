@@ -559,21 +559,10 @@ function Download() {
             Your next free evening is already there.
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-lg text-pretty text-xs sm:text-sm md:text-base leading-relaxed text-text-secondary">
-            {site.name} is available on Android, iOS and the web. iOS and web users can download and launch Plans directly in their browser at joinplansnow.web.app.
+            {site.name} is available on Android and iOS. Choose your platform to download and get started today.
           </p>
 
-          <a
-            href={site.webAppUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-5 sm:mt-6 inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 sm:px-6 sm:py-3.5 text-xs sm:text-sm font-medium text-white shadow-[0_18px_40px_-16px_var(--color-accent)] transition hover:bg-accent-soft"
-          >
-            <BrowserIcon className="h-4 w-4" />
-            Download &amp; Open Plans on iOS / Web
-            <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-
-          <div className="mt-6 sm:mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-7 sm:mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <a
               href={site.playStoreUrl}
               target="_blank"
@@ -594,16 +583,16 @@ function Download() {
               href={site.webAppUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 sm:h-14 w-full sm:w-auto items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-accent/60 bg-surface/90 px-5 sm:px-6 text-left transition hover:border-accent hover:bg-surface hover:scale-105 active:scale-95 sm:w-auto shadow-[0_4px_20px_rgba(106,0,244,0.25)]"
-              aria-label="Download Plans on iOS and Web"
+              className="inline-flex h-12 sm:h-14 w-auto min-w-[200px] items-center justify-center gap-3 rounded-xl sm:rounded-2xl border border-white/20 bg-black/95 px-5 sm:px-6 text-left shadow-[0_6px_20px_rgba(0,0,0,0.5)] transition-all hover:scale-105 hover:border-white/40 hover:shadow-[0_8px_24px_rgba(255,255,255,0.15)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="Download Plans on iOS"
             >
-              <AppleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-cream" />
+              <AppleIcon className="h-6 w-6 sm:h-7 sm:w-7 text-white flex-none" />
               <span className="leading-tight">
-                <span className="block text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-accent-soft font-bold">
-                  iOS &amp; Web Version
+                <span className="block text-[10px] sm:text-[11px] font-medium text-white/75">
+                  Download on
                 </span>
-                <span className="block text-xs sm:text-sm font-medium text-text-primary">
-                  Open joinplansnow.web.app
+                <span className="block text-sm sm:text-base font-semibold text-white tracking-tight">
+                  Apple iOS
                 </span>
               </span>
             </a>
