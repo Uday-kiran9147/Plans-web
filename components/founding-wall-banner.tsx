@@ -1,71 +1,30 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { AppleIcon, ArrowRightIcon, GooglePlayIcon, SparkIcon } from "./icons";
 import { site } from "./site";
 
 export function FoundingWallBanner() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Fallback if browser policy intervenes
-      });
-    }
-  }, []);
-
   return (
     <div className="relative my-6 overflow-hidden rounded-[2rem] border-2 border-orange/60 bg-gradient-to-br from-[#2a0e28] via-[#1c0c2e] to-[#120722] p-5 sm:p-7 lg:p-8 shadow-[0_0_45px_-8px_rgba(255,155,80,0.32)] transition-all hover:border-orange hover:shadow-[0_0_55px_-5px_rgba(255,155,80,0.42)]">
       {/* Warm ambient background glow */}
       <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-orange/20 blur-3xl animate-pulse" />
       <div className="pointer-events-none absolute -left-16 -bottom-16 h-56 w-56 rounded-full bg-accent/30 blur-3xl" />
 
-      {/* Main Grid: Video Reel beside Sign Wall Details */}
+      {/* Main Grid: First 100 Image beside Sign Wall Details */}
       <div className="mt-6 grid items-center gap-6 md:grid-cols-[240px_1fr] lg:grid-cols-[270px_1fr] lg:gap-10">
-        {/* Left Column: Autoplaying Sign Wall Reel */}
+        {/* Left Column: First 100 Sign Wall Graphic */}
         <div className="relative mx-auto flex w-full max-w-[240px] sm:max-w-[260px] lg:max-w-[270px] flex-none flex-col items-center">
-          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.75rem] border-2 border-orange/50 bg-ink-soft shadow-[0_12px_40px_rgba(0,0,0,0.7)] ring-2 ring-orange/20">
-            <video
-              ref={videoRef}
-              src="/video/plans-signwall-reel.mp4"
-              autoPlay
-              muted={muted}
-              playsInline
-              loop
-              preload="auto"
-              className="h-full w-full object-cover"
-              aria-label="Plans Founding Sign Wall live walkthrough preview"
+          <div className="relative w-full overflow-hidden rounded-[1.75rem] border-2 border-orange/50 bg-ink-soft shadow-[0_12px_40px_rgba(0,0,0,0.7)] ring-2 ring-orange/20">
+            <Image
+              src="/brand/first-100.png"
+              alt="Be one of the first 100 - Sign the wall"
+              width={478}
+              height={674}
+              className="h-auto w-full object-cover"
+              priority
             />
-
-            {/* Live Stamp Badge */}
-            <div className="pointer-events-none absolute left-3 top-3 flex items-center gap-1.5 rounded-full bg-orange/95 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-plum-ink shadow-md backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-plum-ink opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-plum-ink" />
-              </span>
-              Live Wall Reel
-            </div>
-
-            {/* Sound Toggle */}
-            <button
-              type="button"
-              onClick={() => {
-                const nextMuted = !muted;
-                setMuted(nextMuted);
-                if (videoRef.current) {
-                  videoRef.current.muted = nextMuted;
-                }
-              }}
-              className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full border border-cream/30 bg-ink/85 px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-cream shadow backdrop-blur-md transition hover:bg-orange hover:text-plum-ink active:scale-95"
-              aria-label={muted ? "Unmute reel" : "Mute reel"}
-            >
-              {muted ? "🔇 Sound" : "🔊 Playing"}
-            </button>
           </div>
           <span className="mt-2 text-center font-mono text-[10px] uppercase tracking-wider text-text-tertiary">
-            Real in-app sign wall experience
+            Scan to sign the wall
           </span>
         </div>
 

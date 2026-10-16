@@ -64,22 +64,17 @@ export function WallClientView() {
           Sign the wall today, claim your spot, and earn your permanent Founding Member badge:
         </p>
 
-        {/* Live Sign Wall Reel Preview */}
-        <div className="mt-6 mx-auto flex w-full max-w-[200px] sm:max-w-[220px] flex-col items-center">
-          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.5rem] border-2 border-orange/50 bg-ink-soft shadow-[0_12px_35px_rgba(0,0,0,0.7)] ring-2 ring-orange/20">
-            <video
-              src="/video/plans-signwall-reel.mp4"
-              autoPlay
-              muted
-              playsInline
-              loop
-              preload="auto"
-              className="h-full w-full object-cover"
-              aria-label="Plans Founding Sign Wall live walkthrough preview"
+        {/* Sign Wall Image Preview */}
+        <div className="mt-6 mx-auto flex w-full max-w-[220px] sm:max-w-[240px] flex-col items-center">
+          <div className="relative w-full overflow-hidden rounded-[1.5rem] border-2 border-orange/50 bg-ink-soft shadow-[0_12px_35px_rgba(0,0,0,0.7)] ring-2 ring-orange/20">
+            <Image
+              src="/brand/first-100.png"
+              alt="Be one of the first 100 - Sign the wall"
+              width={478}
+              height={674}
+              className="h-auto w-full object-cover"
+              priority
             />
-            <div className="pointer-events-none absolute left-2.5 top-2.5 rounded-full bg-orange px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-plum-ink shadow">
-              Live Wall
-            </div>
           </div>
         </div>
 
