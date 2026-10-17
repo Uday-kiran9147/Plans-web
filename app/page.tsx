@@ -198,8 +198,7 @@ export default function Home() {
     <>
       <StructuredData />
       <Hero />
-      <StatStrip />
-      <PlanPassStudio />
+      {/* <StatStrip /> */}
       <ArtworkGallery />
       <HowItWorks />
       {/* <InteractiveSimulator /> */}
