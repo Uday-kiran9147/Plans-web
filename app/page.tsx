@@ -242,13 +242,6 @@ function Hero() {
             </p>
 
             <div className="mt-7 sm:mt-9 flex flex-col items-center justify-center gap-2.5 sm:gap-3 sm:flex-row lg:justify-start">
-              <a
-                href="/download"
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-plum-ink bg-orange px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-plum-ink shadow-[0_4px_0px_#302547] sm:shadow-[0_6px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_8px_0px_#302547] active:translate-y-0.5 sm:w-auto"
-              >
-                Get Plans
-                <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
               <Link
                 href="#watch"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-stroke bg-surface/60 px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-medium text-text-primary transition hover:border-orange/50 hover:bg-surface sm:w-auto"
