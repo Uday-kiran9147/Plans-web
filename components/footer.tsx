@@ -26,7 +26,10 @@ const columns = [
   },
   {
     title: "Contact",
-    links: [{ href: `mailto:${site.supportEmail}`, label: site.supportEmail }],
+    links: [
+      { href: `mailto:${site.supportEmail}`, label: site.supportEmail },
+      { href: site.instagramUrl, label: "Instagram" },
+    ],
   },
 ];
 

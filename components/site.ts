@@ -14,6 +14,8 @@ export const site = {
   webAppUrl: "https://joinplansnow.web.app",
   /** Live Android listing on Google Play. */
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.plans.app",
+  /** Official Plans Instagram account. */
+  instagramUrl: "https://www.instagram.com/plans.in/",
   /** Founding Sign Wall links */
   wallAndroidUrl: "https://plans.drophouse.club/wall",
   wallIosUrl: "https://joinplansnow.web.app/wall",
