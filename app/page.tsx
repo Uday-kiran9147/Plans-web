@@ -199,12 +199,13 @@ export default function Home() {
       <StructuredData />
       <Hero />
       {/* <StatStrip /> */}
+      <PlanPassStudio />
       <ArtworkGallery />
       <HowItWorks />
       {/* <InteractiveSimulator /> */}
-      {/* <Features /> */}
+      <Features />
       <Notifications />
-      {/* <PrivacyFirst /> */}
+      <PrivacyFirst />
       <Faq />
       <Download />
     </>
@@ -451,8 +452,9 @@ function PrivacyFirst() {
   return (
     <section
       id="privacy-first"
-      className="scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-16 sm:py-24 lg:py-32"
+      className="relative scroll-mt-24 border-y border-stroke bg-ink-soft/40 py-16 sm:py-24 lg:py-32"
     >
+      <div id="privacy" className="absolute -top-24 pointer-events-none" aria-hidden="true" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Privacy by design"
