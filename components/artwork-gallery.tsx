@@ -7,7 +7,7 @@ const artworks = [
     title: "GET TOGETHER",
     img: "/brand/meetup.png",
     alt: "Three friends meeting at a cafe table with racket",
-    desc: "Real eye contact, unhurried conversations, and spontaneous plans. A table where nobody is looking down at a screen.",
+    desc: "Meet people face to face over coffee or a shared activity.",
     footerAsset: "REAL PRESENCE",
     footerStatus: "CONFIRMED 6:00 PM",
     statusColor: "text-burnt-orange",
@@ -18,7 +18,7 @@ const artworks = [
     title: "MAKE IT HAPPEN",
     img: "/brand/activities.png",
     alt: "Coffee, board games and badminton tools",
-    desc: "Espresso, board games, shuttlecocks, tennis courts. One line of intent turns vague 'we should hang out' into actual weekend activities.",
+    desc: "Pick something you enjoy and find people to join you.",
     footerAsset: "DOING OVER TALKING",
     footerStatus: "ZERO IDLE CHATS",
     statusColor: "text-accent",
@@ -29,7 +29,7 @@ const artworks = [
     title: "KEEP THE GOOD DAYS",
     img: "/brand/memories.png",
     alt: "Friends in keepsake photo cards and tickets",
-    desc: "Photo keepsakes and shared moments. Your feed is not a public broadcast for algorithm likes - it is an authentic vault of things you actually did.",
+    desc: "Save photos from the plans you went to together.",
     footerAsset: "REAL KEEPSAKES",
     footerStatus: "PROOF YOU WENT",
     statusColor: "text-burnt-orange",
@@ -42,13 +42,13 @@ export function ArtworkGallery() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
-            Our Philosophy
+            Why Plans
           </p>
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
-            The Trifecta of Living Well
+            More time together.
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-text-secondary text-sm sm:text-base">
-            Real connection isn&apos;t built behind a screen. It thrives on three simple habits: showing up in person, doing what you love, and keeping the moments that matter.
+            Meet up. Do something you love. Keep the memories.
           </p>
         </div>
 

@@ -98,14 +98,14 @@ export function VideoWalkthrough() {
 
   return (
     <section id="watch" aria-labelledby="walkthrough-title" className={styles.room}>
-      <div className={styles.topline}><span>THE PLANS SCREENING ROOM</span><span>01 FILM / 103 SECONDS</span></div>
+      <div className={styles.topline}><span>SEE PLANS IN ACTION</span><span>1 MIN 43 SEC</span></div>
       <div className={styles.layout}>
         <div className={styles.story}>
-          <span className={styles.ticket}>A LITTLE PREVIEW OF REAL LIFE</span>
-          <h2 id="walkthrough-title">A thought.<br />A plan.<br /><em>A table for five.</em></h2>
-          <p>Follow one idea all the way to board games and chai. This is how Plans turns “we should” into “see you there”.</p>
-          <button type="button" className={styles.watchButton} onClick={() => watch()}><PlayIcon /><span>Watch with sound <small>1 min 43 sec</small></span><span aria-hidden="true">↗</span></button>
-          <div className={styles.chapterHeading}>OR SKIP TO YOUR PART <span aria-hidden="true">↓</span></div>
+          <h2 id="walkthrough-title">See how<br /><em>it works.</em></h2>
+          <p>Watch a plan go from an idea to a real meet-up.</p>
+          <button type="button" className={styles.watchButton} onClick={() => watch()}><PlayIcon /><span>Play video <small>1 min 43 sec · Sound on</small></span><span aria-hidden="true">↗</span></button>
+          <details>
+          <summary className={styles.chapterHeading}>Choose a chapter <span aria-hidden="true">+</span></summary>
           <ol className={styles.chapters}>
             {chapters.map((chapter, index) => (
               <li key={chapter.time}><button type="button" onClick={() => watch(chapter.time)} aria-label={`Watch ${chapter.label} from ${chapter.stamp}`}>
@@ -113,24 +113,22 @@ export function VideoWalkthrough() {
               </button></li>
             ))}
           </ol>
+          </details>
         </div>
         <div className={styles.stage}>
-          <div className={styles.orbit} aria-hidden="true" />
-          <span className={styles.sticker} aria-hidden="true">LESS<br />SCROLL.<br />MORE LIFE.</span>
           <div className={styles.film}>
             <div className={styles.filmHeader}><span className={styles.dot} /> PLANS, START TO FINISH <span>9:16</span></div>
             <button type="button" className={styles.posterButton} onClick={() => watch()} aria-label="Watch the full Plans walkthrough with sound">
               <video ref={preview} muted playsInline loop preload="none" poster="/video/plans-poster.jpg" width="540" height="960" aria-hidden="true" onPlay={() => setPreviewPlaying(true)} onPause={() => setPreviewPlaying(false)} />
-              <span className={styles.playBadge}><PlayIcon /> Step inside</span>
+              <span className={styles.playBadge}><PlayIcon /> Play video</span>
             </button>
             <div className={styles.filmFooter}><span>{previewPlaying ? "SILENT SNEAK PEEK" : "YOUR NEXT GOOD PLAN"}</span><button type="button" onClick={() => setPreviewPaused(!previewPaused)} aria-label={previewPaused ? "Allow preview autoplay" : "Pause preview"}>{previewPaused ? "Resume preview" : "Pause preview"}</button></div>
           </div>
-          <span className={styles.caption}>Good things start with showing up. <span aria-hidden="true">✳</span></span>
         </div>
       </div>
       <dialog ref={dialog} className={styles.dialog} aria-labelledby="film-title" onCancel={(event) => { event.preventDefault(); close(); }} onClick={(event) => { if (event.target === event.currentTarget) close(); }}>
         <div className={styles.cinema}>
-          <header className={styles.cinemaHeader}><div><span>THE FULL WALKTHROUGH</span><h3 id="film-title">From a thought to a table for five.</h3></div><button type="button" onClick={close} aria-label="Close walkthrough" autoFocus>✕</button></header>
+          <header className={styles.cinemaHeader}><div><span>PLANS WALKTHROUGH</span><h3 id="film-title">See how Plans works.</h3></div><button type="button" onClick={close} aria-label="Close walkthrough" autoFocus>✕</button></header>
           <div className={styles.cinemaBody}>
             <video ref={player} controls playsInline preload="none" poster="/video/plans-poster.jpg" aria-label="Plans full walkthrough with narration" onLoadedMetadata={() => { if (player.current) player.current.currentTime = startTime.current; }} onTimeUpdate={() => { const time = player.current?.currentTime ?? 0; setActiveChapter(chapters.reduce((active, chapter, index) => time >= chapter.time ? index : active, 0)); }} onError={() => setError(true)} />
             <aside className={styles.cinemaChapters}><p>ONE IDEA. FIVE LITTLE STEPS.</p>{chapters.map((chapter, index) => <button key={chapter.time} type="button" aria-current={activeChapter === index ? "step" : undefined} onClick={() => watch(chapter.time)}><span>0{index + 1}</span><span>{chapter.label}<small>{chapter.stamp}</small></span></button>)}<a href="#download" onClick={close}>Make your own plan ↗</a></aside>

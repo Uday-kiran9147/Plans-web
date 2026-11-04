@@ -7,13 +7,9 @@ const columns = [
     title: "Product",
     links: [
       { href: "/#how", label: "How it works" },
-      { href: "/#features", label: "Features" },
-      { href: "/#privacy-first", label: "Privacy by design" },
-      { href: "/#faq", label: "FAQ" },
+      { href: "/#faq", label: "Questions" },
       { href: "/feedback", label: "Give feedback" },
-      { href: "/wall", label: "Sign Wall" },
-      { href: site.wallAndroidUrl, label: "Sign Wall (Android)" },
-      { href: site.wallIosUrl, label: "Sign Wall (iOS)" },
+      { href: "/wall", label: "Founding wall" },
     ],
   },
   {
@@ -44,7 +40,7 @@ export function Footer() {
               <span className="text-[17px] font-bold tracking-tight text-cream">{site.name}</span>
             </Link>
             <p className="mt-3 sm:mt-4 max-w-xs text-xs sm:text-sm leading-relaxed text-text-secondary">
-              {site.tagline} A social app built around meeting up, not scrolling.
+              {site.tagline}
             </p>
           </div>
 

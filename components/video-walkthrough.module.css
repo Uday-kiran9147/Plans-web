@@ -10,7 +10,7 @@
 .watchButton svg { width: 26px; height: 26px; }
 .watchButton > span:first-of-type { flex: 1; }
 .watchButton small { display: block; font-size: 10px; font-weight: 500; margin-top: 3px; }
-.chapterHeading { display: flex; justify-content: space-between; font: 9px ui-monospace, monospace; letter-spacing: .14em; color: #c9bed9; margin-bottom: 8px; }
+.chapterHeading { display: flex; justify-content: space-between; font-size: 14px; color: #c9bed9; margin-bottom: 8px; padding: 12px 0; cursor: pointer; list-style: none; }
 .chapters { list-style: none; padding: 0; }
 .chapters button { display: flex; align-items: center; gap: 14px; width: 100%; padding: 12px 0; border-top: 1px solid #453468; text-align: left; cursor: pointer; font-size: 13px; transition: color .2s, padding .2s; }
 .chapters button:hover { color: #ff9b50; padding-left: 6px; }

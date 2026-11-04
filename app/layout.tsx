@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { TickerBanner } from "@/components/ticker-banner";
 import { site } from "@/components/site";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -25,7 +24,8 @@ export const metadata: Metadata = {
     "meet up app",
     "social app",
     "make plans with friends",
-    "find people nearby",
+    "meet new people",
+    "hang out with friends",
   ],
   openGraph: {
     type: "website",
@@ -70,7 +70,6 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <TickerBanner />
         <Header />
         <main id="main">{children}</main>
         <Footer />

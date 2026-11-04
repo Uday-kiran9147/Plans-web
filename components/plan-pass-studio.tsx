@@ -88,13 +88,13 @@ export function PlanPassStudio() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
-            Interactive Pass Studio
+            Try it out
           </p>
           <h2 className="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">
-            The Instant Plan Generator
+            Make a sample plan.
           </h2>
           <p className="mt-4 text-pretty leading-relaxed text-text-secondary text-sm sm:text-base">
-            Compose your intent. Watch the plum-ink seal lock in your plan, and claim your pass for tonight.
+            Pick an idea and edit the details. This is a preview; open Plans to invite people.
           </p>
         </div>
 
@@ -106,7 +106,7 @@ export function PlanPassStudio() {
                 ✂️
               </span>
               <h3 className="font-semibold uppercase tracking-tight text-lg sm:text-xl text-plum-ink">
-                Compose Intent
+                Your plan
               </h3>
             </div>
 
@@ -179,7 +179,7 @@ export function PlanPassStudio() {
                 onClick={handleStamp}
                 className="flex-1 min-w-[130px] rounded-xl sm:rounded-2xl border-2 border-plum-ink bg-orange px-4 py-3 sm:px-5 sm:py-3.5 text-center text-xs sm:text-sm font-bold uppercase tracking-wide text-plum-ink shadow-[0_4px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-[#FFAF70] hover:shadow-[0_6px_0px_#302547] active:translate-y-0.5 active:shadow-[0_1px_0px_#302547]"
               >
-                🔨 Stamp It Now
+                Stamp preview
               </button>
               <button
                 type="button"
@@ -187,7 +187,7 @@ export function PlanPassStudio() {
                 className="inline-flex items-center justify-center gap-1.5 rounded-xl sm:rounded-2xl border-2 border-plum-ink bg-accent px-4 py-3 sm:px-5 sm:py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wide text-cream shadow-[0_4px_0px_#302547] transition hover:-translate-y-0.5 hover:bg-accent-soft hover:shadow-[0_6px_0px_#302547] active:translate-y-0.5 active:shadow-[0_1px_0px_#302547]"
               >
                 {copied ? <CheckIcon className="h-4 w-4" /> : <SparkIcon className="h-4 w-4" />}
-                {copied ? "Copied!" : "Copy Pass"}
+                {copied ? "Copied!" : "Copy details"}
               </button>
             </div>
           </div>
@@ -238,7 +238,7 @@ export function PlanPassStudio() {
                     </div>
                     <div>
                       <span className="block text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-plum-ink/60">
-                        Rendezvous Spot
+                        Meeting place
                       </span>
                       <strong className="mt-0.5 block text-xs sm:text-sm font-extrabold text-plum-ink">
                         {loc}

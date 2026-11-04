@@ -1,9 +1,9 @@
 /** Single source of truth for the copy that shows up in more than one place. */
 export const site = {
   name: "Plans",
-  tagline: "Make plans, things you want to do.",
+  tagline: "Meet people. Hang out.",
   description:
-    "Plans is a social app for real life. Say what you want to do, find the people who want the same thing, and turn it into a plan that actually happens.",
+    "Meet people and make new friends over coffee, games, or whatever you're into. Free on Android and web.",
   /** Canonical origin. Change this if the site moves to a custom domain. */
   url: "https://plans.drophouse.club",
   /**
@@ -34,11 +34,6 @@ export const site = {
 
 export const nav = [
   { href: "/#watch", label: "Watch" },
-  { href: "/#pass-studio", label: "Pass Studio" },
-  { href: "/#artwork", label: "Philosophy" },
   { href: "/#how", label: "How it works" },
-  { href: "/#features", label: "Features" },
-  { href: "/#privacy-first", label: "Privacy" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/wall", label: "Sign Wall" },
+  { href: "/#faq", label: "Questions" },
 ] as const;
