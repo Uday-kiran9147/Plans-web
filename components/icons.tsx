@@ -177,6 +177,25 @@ export function BrowserIcon(props: IconProps) {
   );
 }
 
+export function MailIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 6 9-6" />
+    </Svg>
+  );
+}
+
+export function HelpCircleIcon(props: IconProps) {
+  return (
+    <Svg {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+      <circle cx="12" cy="17" r=".5" fill="currentColor" />
+    </Svg>
+  );
+}
+
 export function LogoMark(props: IconProps) {
   return (
     <svg viewBox="0 0 100 100" fill="none" aria-hidden="true" {...props}>

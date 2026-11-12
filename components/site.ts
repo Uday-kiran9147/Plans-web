@@ -21,6 +21,7 @@ export const site = {
   wallIosUrl: "https://joinplansnow.web.app/wall",
   /** One address for everything: support, privacy requests, legal. */
   supportEmail: "hello@drophouse.club",
+  supportUrl: "https://plans.drophouse.club/support",
   privacyEmail: "thehustler.dev@gmail.com",
   /** Published on /child-safety and given to Google Play. Must be monitored. */
   childSafetyEmail: "thehustler.dev@gmail.com",
