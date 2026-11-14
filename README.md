@@ -51,11 +51,7 @@ the layout moves when you swap them in.
 - `app/privacy/page.tsx`, `app/terms/page.tsx` - the `[bracketed]` entity name,
   registered address and liability cap; then a legal review. Once those are
   filled in, drop `<TemplateNotice />` from both pages.
-- Android and web are live. Their links are configured in `components/site.ts`
-  as `playStoreUrl` and `webAppUrl`.
-- iOS is coming soon; iPhone and iPad users are directed to the web version.
-  When iOS launches, replace the App Store chip in `Download` with its live link
-  and update the hero, FAQ and structured data in `app/page.tsx`.
+- iOS, Android and web are live. Their links are configured in `components/site.ts` as `appStoreUrl`, `playStoreUrl` and `webAppUrl`.
 
 ## Icons
 

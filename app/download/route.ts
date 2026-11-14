@@ -9,6 +9,11 @@ export function GET(request: NextRequest) {
     return NextResponse.redirect(site.playStoreUrl, { status: 307 });
   }
 
-  // iOS and Web users are redirected to joinplansnow.web.app to download/install/launch Plans
+  // iOS users go to Apple App Store
+  if (/iPad|iPhone|iPod/i.test(userAgent)) {
+    return NextResponse.redirect(site.appStoreUrl, { status: 307 });
+  }
+
+  // Web users are redirected to joinplansnow.web.app to download/install/launch Plans
   return NextResponse.redirect(site.webAppUrl, { status: 307 });
 }

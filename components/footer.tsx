@@ -8,6 +8,8 @@ const columns = [
     links: [
       { href: "/#how", label: "How it works" },
       { href: "/#faq", label: "Questions" },
+      { href: site.appStoreUrl, label: "App Store (iOS)" },
+      { href: site.playStoreUrl, label: "Google Play (Android)" },
       { href: "/feedback", label: "Give feedback" },
       { href: "/wall", label: "Founding wall" },
     ],

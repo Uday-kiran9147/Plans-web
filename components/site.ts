@@ -3,7 +3,7 @@ export const site = {
   name: "Plans",
   tagline: "Meet people. Hang out.",
   description:
-    "Meet people and make new friends over coffee, games, or whatever you're into. Free on Android and web.",
+    "Meet people and make new friends over coffee, games, or whatever you're into. Free on iOS, Android and web.",
   /** Canonical origin. Change this if the site moves to a custom domain. */
   url: "https://plans.drophouse.club",
   /**
@@ -12,6 +12,8 @@ export const site = {
    * Update this if the web app ever moves to a custom domain.
    */
   webAppUrl: "https://joinplansnow.web.app",
+  /** Live iOS listing on Apple App Store. */
+  appStoreUrl: "https://apps.apple.com/us/app/plans-meet-people-hang-out/id6832523321",
   /** Live Android listing on Google Play. */
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.plans.app",
   /** Official Plans Instagram account. */

@@ -5,7 +5,7 @@ import { HeroStage } from "@/components/hero-stage";
 import { VideoWalkthrough } from "@/components/video-walkthrough";
 import { PlanPassStudio } from "@/components/plan-pass-studio";
 import { ArtworkGallery } from "@/components/artwork-gallery";
-import { ArrowRightIcon, BellIcon, BrowserIcon, ChatIcon, LockIcon, PeopleIcon, ShieldIcon, SparkIcon } from "@/components/icons";
+import { AppleIcon, ArrowRightIcon, BellIcon, BrowserIcon, ChatIcon, LockIcon, PeopleIcon, ShieldIcon, SparkIcon } from "@/components/icons";
 
 const steps = [
   { icon: SparkIcon, title: "Pick something fun", body: "Coffee, games, sports. Start a plan or join one." },
@@ -15,7 +15,7 @@ const steps = [
 
 const faqs = [
   { q: "Is Plans free?", a: "Yes. Plans is free to use." },
-  { q: "Where can I use it?", a: "On Android or in your browser. The iOS app is coming soon; iPhone users can use the web version." },
+  { q: "Where can I use it?", a: "On iOS via the App Store, on Android via Google Play, or right in your browser at joinplansnow.web.app." },
   { q: "Can I make my own plan?", a: "Yes. Pick something you want to do, add a time and place, and invite people to join." },
   { q: "Who can see my plans?", a: "Keep a plan friends-only or let others join. Private plans stay off the public map." },
   { q: "Do I need to share my location?", a: "Only to find plans nearby. You can still search and join by invite without it." },
@@ -30,8 +30,9 @@ function StructuredData() {
         name: site.name,
         description: site.description,
         applicationCategory: "SocialNetworkingApplication",
-        operatingSystem: "Android, Web",
-        downloadUrl: site.playStoreUrl,
+        operatingSystem: "iOS, Android, Web",
+        downloadUrl: site.appStoreUrl,
+        installUrl: site.playStoreUrl,
         url: site.url,
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
       },
@@ -71,7 +72,7 @@ export default function Home() {
                 Watch how it works
               </Link>
             </div>
-            <p className="mt-4 text-sm text-text-secondary">Free to use · Android &amp; web</p>
+            <p className="mt-4 text-sm text-text-secondary">Free to use · iOS, Android &amp; web</p>
           </div>
           <HeroStage />
         </div>
@@ -137,8 +138,25 @@ export default function Home() {
         <div className="mx-auto max-w-5xl rounded-3xl border border-stroke bg-surface/60 px-5 py-10 text-center sm:p-12">
           <Image src="/app-icon.png" alt="" width={64} height={64} className="mx-auto mb-5 rounded-2xl" />
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Ready to hang out?</h2>
-          <p className="mt-3 text-base text-text-secondary">Get the Android app or start in your browser.</p>
-          <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <p className="mt-3 text-base text-text-secondary">Get the app on iOS &amp; Android, or start in your browser.</p>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={site.appStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-14 items-center gap-3 rounded-xl border border-white/20 bg-black px-4.5 transition hover:scale-105 hover:border-white/40"
+              aria-label="Download on the App Store"
+            >
+              <AppleIcon className="h-7 w-7 text-white flex-none" />
+              <div className="flex flex-col text-left">
+                <span className="text-[10px] font-medium leading-none text-white/80">
+                  Download on the
+                </span>
+                <span className="mt-1 text-lg font-semibold leading-none tracking-tight text-white">
+                  App Store
+                </span>
+              </div>
+            </a>
             <a href={site.playStoreUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-14 items-center rounded-lg transition hover:scale-105">
               <Image src="/playstore-button.png" alt="Get it on Google Play" width={5984} height={2087} className="h-14 w-auto" />
             </a>
@@ -146,7 +164,7 @@ export default function Home() {
               <BrowserIcon className="h-5 w-5" />Open web app
             </a>
           </div>
-          <p className="mt-5 text-sm text-text-secondary">On iPhone? Use the web app. iOS app coming soon.</p>
+          <p className="mt-5 text-sm text-text-secondary">Free to use · Available on iOS, Android &amp; web</p>
           <p className="mt-6 border-t border-stroke pt-5 text-sm text-text-secondary">
             Here early? <Link href="/wall" className="text-orange underline underline-offset-4">Sign the founding wall</Link>
           </p>

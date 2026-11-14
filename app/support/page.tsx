@@ -34,7 +34,7 @@ const supportFaqs = [
   {
     category: "Getting Started",
     q: "Where is Plans available?",
-    a: "Plans is available natively on Android via Google Play and across all devices through our web app at joinplansnow.web.app. An iOS native app is currently in development.",
+    a: "Plans is available on iOS via the Apple App Store, on Android via Google Play, and across all devices in your web browser at joinplansnow.web.app.",
   },
   {
     category: "Safety & Privacy",

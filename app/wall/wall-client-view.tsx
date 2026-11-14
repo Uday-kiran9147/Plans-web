@@ -163,9 +163,14 @@ export function WallClientView() {
                 Sign Wall on iOS / Web
                 <ArrowRightIcon className="h-4 w-4" />
               </a>
-              <span className="text-center text-[11px] text-text-tertiary">
-                No store download required
-              </span>
+              <a
+                href={site.appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-center text-[11px] text-text-tertiary underline underline-offset-4 hover:text-text-secondary"
+              >
+                Prefer native? Get on App Store
+              </a>
             </div>
           </div>
         </div>
